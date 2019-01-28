@@ -1,6 +1,14 @@
 var dUrl="https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/";
 var bUrl = window.location;
 var dossier = new Array();
+
+var removeChilds = function(element){
+  while(element.hasChildNodes())
+  element.removeChild(element.firstChild);  
+};
+
+
+
 var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -24,9 +32,37 @@ var pintarMenu = function(nom, data){
       element.classList.add('dropdown-item');
       let name = e.name;
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
+      element.onclick = 'pintarImatges(' + name + ')';
       menu.appendChild(element);      
     });
   }
+};
+
+var pintarImatges = function(album){
+  let grid = document.querySelector('.grid');
+  removeChilds(grid);
+  console.log("Dossier",dossier);
+
+  var msnry = new Masonry( grid, {
+    columnWidth: '.grid-sizer',
+    percentPosition: true
+  });
+
+  addEvent(grid, 'click', 'grid-item', function(e){ 
+    target = e.target;
+    if(e.target.tagName=="IMG"){
+      target=e.target.parentElement;
+      }
+    if(target.tagName=="DIV"){
+      target.classList.toggle('grid-item--gran');
+      if(target!=gran){
+        gran.classList.remove('grid-item--gran');
+      }
+      // trigger layout
+      gran=target;
+     msnry.layout();
+    }
+  });
 };
 
 window.onload = function(){
