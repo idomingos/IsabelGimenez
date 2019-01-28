@@ -32,7 +32,7 @@ var pintarMenu = function(nom, data){
       element.classList.add('dropdown-item');
       let name = e.name;
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
-      element.onclick = 'pintarImatges(' + name + ')';
+      element.onclick = pintarImatges(name);
       menu.appendChild(element);      
     });
   }
