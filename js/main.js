@@ -34,7 +34,6 @@ var getJSON = function(url, callback) {
     xhr.responseType = 'json';
     xhr.onload = function() {
       var status = xhr.status;
-      console.log(status);
       if (status === 200) {
         callback(null, xhr.response);
       } else {
@@ -51,7 +50,7 @@ var pintarMenu = function(nom, data){
       element.classList.add('dropdown-item');
       let name = e.name;
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
-      element.addEventListener("click",  pintarImatges(name));
+      element.addEventListener("click",  'pintarImatges('+name+')');
      //element.onclick = pintarImatges(name);
       menu.appendChild(element);      
     });
