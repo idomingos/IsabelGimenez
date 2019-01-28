@@ -7,6 +7,25 @@ var removeChilds = function(element){
   element.removeChild(element.firstChild);  
 };
 
+var addEvent = function(element, event, selector, func) {  
+    element.addEventListener(event, function(e){
+        var that = this;
+        var helper = function (el) {
+            if (el !== that) {
+                if (el.classList.contains(selector)) {
+                    return el;
+                }
+                return helper(el.parentNode);
+            }
+            return false;
+        }
+        var el = helper(e.target);
+        if (el !== false) {
+            func.call(this, e);
+        }
+    });
+};
+
 
 
 var getJSON = function(url, callback) {
