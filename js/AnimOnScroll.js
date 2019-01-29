@@ -96,7 +96,7 @@
 
 			var self = this;
 
-			//imagesLoaded( this.el, function() {
+			imagesLoaded( this.el, function() {
 				
 				// initialize masonry
 				msnry = new Masonry( self.el, {
@@ -124,7 +124,7 @@
 					}, false );
 				}
 
-			//});
+			});
 		},
 		_onScrollFn : function() {
 			var self = this;
