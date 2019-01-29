@@ -53,10 +53,10 @@ p{
 
 /* ---- grid-item ---- */
 
-.grid-item {
+/*.grid-item {
   width: 15%;
   float: left;
-}
+}*/
 
 .grid-item--width2 { width: 320px; }
 .grid-item--width3 { width: 480px; }
@@ -169,7 +169,8 @@ footer p,a{
         height: auto;
         padding: 15px;
       }
-      .row.content {height:auto;} 
+      .row.content {height:auto;}
+      
     }
   .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
       background-color: #222;

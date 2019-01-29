@@ -80,6 +80,12 @@ var pintarMenu = function(nom, data){
 var pintarImatges = function(e){
    e.preventDefault();
   let grid = document.querySelector('.grid');
+//effect-3
+  grid.className= '';
+  grid.classList.add('grid');
+  grid.classList.add("effect-"+Math.floor((Math.random() * 10) + 1));
+
+
   removeChilds(grid);
   dossier[getPos(e.target.id)].images.forEach(function(image, i){
     let element = document.createElement("li");
