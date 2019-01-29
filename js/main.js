@@ -61,7 +61,7 @@ var pintarMenu = function(nom, data){
 var pintarImatges = function(e){
   let grid = document.querySelector('.grid');
   removeChilds(grid);
-  console.log("pintarImatges",e);
+  console.log("pintarImatges:",e.target.id);
 
   var msnry = new Masonry( grid, {
     columnWidth: '.grid-sizer',
