@@ -11,7 +11,6 @@ var removeChilds = function(element){
     element.removeChild(element.firstChild);  
     i++;
   }
-  console.log("Borrats:",i);
 };
 
 var addEvent = function(element, event, selector, func) {    
@@ -60,11 +59,12 @@ var pintarMenu = function(nom, data){
     data.forEach(function(e){
       let element = document.createElement("a");
       element.classList.add('dropdown-item');
+      element.classList.add('nav-link');
+      element.classList.add('bg-dark');
       let name = e.name;
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
       element.setAttribute("id", name);
       element.setAttribute("href",'#dossier'); 
-      // addEvent(element, 'click', 'dropdown-item',pintarImatges);
       element.onclick = pintarImatges;
       menu.appendChild(element);      
     });
@@ -114,9 +114,7 @@ addEvent(grid, 'click', 'grid-item', function(e){
       }
       // trigger layout
       gran=target;
-      console.log("Anim",anim);
       anim.layout();
-      console.log("click");
     }
   });
 first++;
