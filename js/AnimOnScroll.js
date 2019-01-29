@@ -90,7 +90,6 @@
 		_init : function() {
 			this.items = Array.prototype.slice.call( document.querySelectorAll( '#' + this.el.id + ' > li' ) );
 			this.itemsCount = this.items.length;
-			console.log("items:",this.items.length);
 			this.itemsRenderedCount = 0;
 			this.didScroll = false;
 

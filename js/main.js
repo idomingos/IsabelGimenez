@@ -13,6 +13,11 @@ var removeChilds = function(element){
   }
 };
 
+var hiddenElement = function(){
+  let element = document.getElementById("portada");
+  element.style.display = "none";
+}
+
 var addEvent = function(element, event, selector, func) {    
     element.addEventListener(event, function(e){
         var that = this;
@@ -64,7 +69,8 @@ var pintarMenu = function(nom, data){
       let name = e.name;
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
       element.setAttribute("id", name);
-      element.setAttribute("href",'#dossier'); 
+      element.setAttribute("href",'#dossier');
+      element.addEventListener("click", hiddenElement);
       element.onclick = pintarImatges;
       menu.appendChild(element);      
     });
@@ -83,43 +89,32 @@ var pintarImatges = function(e){
     }
     element.appendChild(image);
     grid.insertBefore(element, grid.firstChild);
-    //grid.appendChild(element);
   });
 
-  /*var msnry = new Masonry( grid, {
-    columnWidth: '.grid-sizer',
-    percentPosition: true
-  });*/
-
-  
-  //msnry.layout();
-  //gran = document.getElementById("gran");
-  //gran.click();
   var anim = new AnimOnScroll( document.getElementById( 'grid' ), {
         minDuration : 0.4,
         maxDuration : 0.7,
         viewportFactor : 0.2
       } );
-if (!first){
-addEvent(grid, 'click', 'grid-item', function(e){ 
-  e.preventDefault();
-    target = e.target;
-    if(e.target.tagName=="IMG"){
-      target=e.target.parentElement;
-      }
-    if(target.tagName=="LI"){
-      target.classList.toggle('grid-item--gran');
-      if(target!=gran){
-        gran.classList.remove('grid-item--gran');
-      }
-      // trigger layout
-      gran=target;
-      anim.layout();
-    }
-  });
-first++;
-}
-
+  if (!first){
+    addEvent(grid, 'click', 'grid-item', function(e){ 
+      e.preventDefault();
+        target = e.target;
+        if(e.target.tagName=="IMG"){
+          target=e.target.parentElement;
+        }
+        if(target.tagName=="LI"){
+          target.classList.toggle('grid-item--gran');
+          if(target!=gran){
+            gran.classList.remove('grid-item--gran');
+          }
+          // trigger layout
+          gran=target;
+          anim.layout();
+        }
+    });
+    first++;
+  }
 };
 
 window.onload = function(){
