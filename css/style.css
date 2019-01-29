@@ -9,6 +9,10 @@ body {
   margin: 50px auto;
   max-width: 90%;}
 
+  header, #aaa{
+    background-color: black;
+  }
+
 p{
   color: black;
 }
@@ -83,6 +87,10 @@ p{
   font-size: 15px;
 }
 
+header a{
+  color:white;
+  text-decoration: none;
+}
 
 footer p,a{
   color:#3a7027;
