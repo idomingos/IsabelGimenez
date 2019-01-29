@@ -50,6 +50,7 @@ var pintarMenu = function(nom, data){
       element.classList.add('dropdown-item');
       let name = e.name;
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
+      element.setAttribute(name, id);
      // addEvent(element, 'click', 'dropdown-item',pintarImatges);
      element.onclick = pintarImatges;
       menu.appendChild(element);      
