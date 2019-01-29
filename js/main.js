@@ -1,13 +1,20 @@
 var dUrl="https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/";
 var bUrl = window.location;
+//var bUrl = "http://isa.eucatra.com/";
 var dossier = new Array();
+var msnry;
+var first=0;
 
 var removeChilds = function(element){
-  while(element.hasChildNodes())
-  element.removeChild(element.firstChild);  
+  let i=0;
+  while(element.hasChildNodes()){
+    element.removeChild(element.firstChild);  
+    i++;
+  }
+  console.log("Borrats:",i);
 };
 
-var addEvent = function(element, event, selector, func) {  
+var addEvent = function(element, event, selector, func) {    
     element.addEventListener(event, function(e){
         var that = this;
         var helper = function (el) {
@@ -25,8 +32,13 @@ var addEvent = function(element, event, selector, func) {
         }
     });
 };
-
-
+var getPos = function(name){
+  let pos=0;
+  dossier.forEach(function(element,i){
+    if(element.name == name)  pos= i;
+  });
+  return pos;
+};
 
 var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
@@ -51,38 +63,65 @@ var pintarMenu = function(nom, data){
       let name = e.name;
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
       element.setAttribute("id", name);
-     // addEvent(element, 'click', 'dropdown-item',pintarImatges);
-     element.onclick = pintarImatges;
+      element.setAttribute("href",'#dossier');
+      // addEvent(element, 'click', 'dropdown-item',pintarImatges);
+      element.onclick = pintarImatges;
       menu.appendChild(element);      
     });
   }
 };
 
 var pintarImatges = function(e){
+   e.preventDefault();
   let grid = document.querySelector('.grid');
   removeChilds(grid);
-  console.log("pintarImatges:",e.target.id);
-
-  var msnry = new Masonry( grid, {
-    columnWidth: '.grid-sizer',
-    percentPosition: true
+  dossier[getPos(e.target.id)].images.forEach(function(image, i){
+    let element = document.createElement("li");
+    element.classList.add("grid-item");
+    if (i==0){
+      element.setAttribute("id", "gran");
+    }
+    element.appendChild(image);
+    grid.insertBefore(element, grid.firstChild);
+    //grid.appendChild(element);
   });
 
-  addEvent(grid, 'click', 'grid-item', function(e){ 
+  /*var msnry = new Masonry( grid, {
+    columnWidth: '.grid-sizer',
+    percentPosition: true
+  });*/
+
+  
+  //msnry.layout();
+  //gran = document.getElementById("gran");
+  //gran.click();
+  var anim = new AnimOnScroll( document.getElementById( 'grid' ), {
+        minDuration : 0.4,
+        maxDuration : 0.7,
+        viewportFactor : 0.2
+      } );
+if (!first){
+addEvent(grid, 'click', 'grid-item', function(e){ 
+  e.preventDefault();
     target = e.target;
     if(e.target.tagName=="IMG"){
       target=e.target.parentElement;
       }
-    if(target.tagName=="DIV"){
+    if(target.tagName=="LI"){
       target.classList.toggle('grid-item--gran');
       if(target!=gran){
         gran.classList.remove('grid-item--gran');
       }
       // trigger layout
       gran=target;
-     msnry.layout();
+      console.log("Anim",anim);
+      anim.layout();
+      console.log("click");
     }
   });
+first++;
+}
+
 };
 
 window.onload = function(){
