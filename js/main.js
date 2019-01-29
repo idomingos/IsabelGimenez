@@ -1,6 +1,6 @@
 var dUrl="https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/";
-var bUrl = window.location;
-//var bUrl = "http://isa.eucatra.com/";
+//var bUrl = window.location;
+var bUrl = "http://isa.eucatra.com/";
 var dossier = new Array();
 var msnry;
 var first=0;
@@ -63,7 +63,7 @@ var pintarMenu = function(nom, data){
       let name = e.name;
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
       element.setAttribute("id", name);
-      element.setAttribute("href",'#dossier');
+      element.setAttribute("href",'#dossier'); 
       // addEvent(element, 'click', 'dropdown-item',pintarImatges);
       element.onclick = pintarImatges;
       menu.appendChild(element);      
