@@ -50,17 +50,17 @@ var pintarMenu = function(nom, data){
       element.classList.add('dropdown-item');
       let name = e.name;
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
-      addEvent(element, 'click', 'dropdown-item',pintarImatges(name));
-     //element.onclick = pintarImatges(name);
+     // addEvent(element, 'click', 'dropdown-item',pintarImatges);
+     element.onclick = pintarImatges;
       menu.appendChild(element);      
     });
   }
 };
 
-var pintarImatges = function(album){
+var pintarImatges = function(e){
   let grid = document.querySelector('.grid');
   removeChilds(grid);
-  console.log("Dossier",dossier);
+  console.log("pintarImatges",e);
 
   var msnry = new Masonry( grid, {
     columnWidth: '.grid-sizer',
