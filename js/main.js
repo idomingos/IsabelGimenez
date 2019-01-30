@@ -17,6 +17,15 @@ var hiddenElement = function(){
   let element = document.getElementById("portada");
   element.style.display = "none";
 }
+var portada = function(){
+  let element = document.getElementById("portada");
+  element.style.display = "flex";
+  //e.preventDefault();
+  let grid = document.querySelector('.grid');
+  removeChilds(grid);
+
+}
+
 
 var addEvent = function(element, event, selector, func) {    
     element.addEventListener(event, function(e){
