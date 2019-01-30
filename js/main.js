@@ -1,6 +1,6 @@
 var dUrl="https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/";
-//var bUrl = window.location;
-var bUrl = "http://isa.eucatra.com/";
+var bUrl = window.location;
+//var bUrl = "http://isa.eucatra.com/";
 var dossier = new Array();
 var msnry;
 var first=0;
