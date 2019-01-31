@@ -5,11 +5,33 @@ var dossier = new Array();
 var msnry;
 var first=0;
 
+var browseDetection = function () {
+
+ //Check if browser is IE
+ if (navigator.userAgent.search("MSIE") >= 0) {
+        return '/jpg/';
+ }
+ //Check if browser is Chrome
+ else if (navigator.userAgent.search("Chrome") >= 0) {
+        return '/webp/';
+ }
+ //Check if browser is Firefox 
+ else if (navigator.userAgent.search("Firefox") >= 0) {
+        return '/jpg/';
+ }
+ //Check if browser is Safari
+ else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+        return '/jpg/';
+ }
+ //Check if browser is Opera
+ else if (navigator.userAgent.search("Opera") >= 0) {
+        return '/webp/';
+ }
+ }
+
 var removeChilds = function(element){
-  let i=0;
   while(element.hasChildNodes()){
-    element.removeChild(element.firstChild);  
-    i++;
+    element.removeChild(element.firstChild);
   }
 };
 
@@ -17,10 +39,10 @@ var hiddenElement = function(){
   let element = document.getElementById("portada");
   element.style.display = "none";
 }
+
 var portada = function(){
   let element = document.getElementById("portada");
   element.style.display = "flex";
-  //e.preventDefault();
   let grid = document.querySelector('.grid');
   removeChilds(grid);
 
@@ -143,7 +165,7 @@ window.onload = function(){
                       var Album = new Object();
                       Album.name = album.name;
                       Album.images = new Array();   
-                      aURL = dUrl+album.name;
+                      aURL = dUrl+album.name+browseDetection();
                       getJSON(aURL, function(err, data){
                                       if(err !== null){
                                         alert('Something went wrong1: ' + err);
