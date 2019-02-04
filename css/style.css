@@ -1,4 +1,8 @@
 @charset "utf-8";
+@font-face{
+   font-family: "daniel";
+   src: url(../font/daniel.ttf);
+}
 
 * { box-sizing: border-box;}
 
@@ -13,6 +17,10 @@ body {
     background-color: black;
   }
 
+  .bg-light, .navbar-light{
+    background-color: #ecefea !important;
+  }
+
 p{
   color: black;
 }
@@ -25,9 +33,9 @@ p{
   align-items: center;
 }
 
+
 #site-title{
   font-family: "daniel";
-  src: url("./font/daniel.ttf");
 }
 
 
@@ -104,11 +112,7 @@ footer p,a{
   color:#3a7027;
   text-decoration: none;
 }
-#contacte,#quisoc{
-  
-  display: none;
-  color:#bee5b0;
-}
+
 /* Animation */
 .anim {
   position: relative;

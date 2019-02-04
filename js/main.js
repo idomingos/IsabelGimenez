@@ -1,6 +1,6 @@
 var dUrl="https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/";
 var bUrl = window.location;
-//var bUrl = "http://isa.eucatra.com/";
+//var bUrl = "https://isa.eucatra.com/";
 var dossier = new Array();
 var msnry;
 var first=0;
@@ -96,7 +96,7 @@ var pintarMenu = function(nom, data){
       let element = document.createElement("a");
       element.classList.add('dropdown-item');
       element.classList.add('nav-link');
-      element.classList.add('bg-dark');
+      element.classList.add('bg-light');
       let name = e.name;
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
       element.setAttribute("id", name);
@@ -119,6 +119,7 @@ var pintarImatges = function(e){
 
   removeChilds(grid);
   dossier[getPos(e.target.id)].images.forEach(function(image, i){
+    image.classList.add("img-thumbnail");
     let element = document.createElement("li");
     element.classList.add("grid-item");
     if (i==0){

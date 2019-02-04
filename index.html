@@ -17,7 +17,7 @@
     <meta name="copyright" content="Isabel Gim&#233;nez 2019"/>
     <meta name="robots" content="Index,Follow"/>
     <meta name='url' content='https://www.isabelgimenez.cat/'>
-    <meta name="theme-color" content="#FF5A00"/>
+    <meta name="theme-color" content="#ecefea"/>
     <meta name="Author" content="Iv&#224; Domingo, iva@eucatra.net">
     <meta name='designer' content='Iv&#224; Domingo, iva@iva.cat'>
   	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -71,7 +71,7 @@
 </head>
 <body>
 	<header>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
     		<!--a class="navbar-brand" href="#">Isabel Gim&#233;nez Al&#237;as - Fot&#242;grafa</a-->
     		<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       			<span class="navbar-toggler-icon"></span>
@@ -86,29 +86,30 @@
 				    	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				   			Dossier
 				       	</a>
-					   	<div id="Dossier" class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown"></div>
+					   	<div id="Dossier" class="dropdown-menu bg-light" aria-labelledby="navbarDropdown"></div>
 				   	</li>                     
                     <li class="nav-item">
                        	<a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#contacte" href="#">Contacte</a>
                     </li>
       			</ul>
+      			<!-- Future function -->
       			<!--form class="form-inline">
         			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         			<button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
       			</form-->
     		</div>
     		<div data-content-field="site-title" class="text-right">
-  				<h1 onclick="portada()" id="site-title">Isabel Gim&#233;nez Al&#237;as - Fot&#242;grafa.</h1>
+  				<h1 onclick="portada()" id="site-title" class="text-dark">Isabel Gim&#233;nez Al&#237;as - Fot&#242;grafa.</h1>
   			</div>
   		</nav>
 	</header>
 
 <!-- Modal Qui -->
-	<div id="qui" class="modal animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="qui" class="modal animated bounceIn bg-dark" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	 	 <!-- dialog -->
 	  	<div class="modal-dialog modal-dialog-centered" role="document">
 	    	<!-- content -->
-	    	<div class="modal-content ">
+	    	<div class="modal-content bg-light">
 	      		<!-- header -->
 	     		<div class="modal-header">
 	        		<h1 id="myModalLabel" class="modal-title">
@@ -129,12 +130,6 @@
 	        		<button class="btn btn-secondary" data-dismiss="modal">
 	          			Tancar
 	        		</button>
-	        		<!--button class="btn btn-default">
-	          			Default
-	        		</button>
-	        		<button class="btn btn-primary">
-	          			Primary
-	        		</button-->
 	      		</div>
 	      		<!-- footer -->
 	    	</div>
@@ -145,11 +140,11 @@
 	<!-- Modal Qui -->
 
 <!-- Modal Contacte -->
-	<div id="contacte" class="modal animated bounceIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="contacte" class="modal animated bounceIn bg-dark" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	 	 <!-- dialog -->
 	  	<div class="modal-dialog modal-dialog-centered" role="document">
 	    	<!-- content -->
-	    	<div class="modal-content">
+	    	<div class="modal-content bg-light">
 	      		<!-- header -->
 	     		<div class="modal-header">
 	        		<h1 id="myModalLabel" class="modal-title">
@@ -169,12 +164,6 @@
 	        		<button class="btn btn-secondary" data-dismiss="modal">
 	          			Tancar
 	        		</button>
-	        		<!--button class="btn btn-default">
-	          			Default
-	        		</button>
-	        		<button class="btn btn-primary">
-	          			Primary
-	        		</button-->
 	      		</div>
 	      		<!-- footer -->
 	    	</div>
@@ -195,10 +184,11 @@
 		</div>
 	</section>
 
-       
-    <ul class="grid" id="grid">
-    	<!--li class='grid-sizer'></li-->
-    </ul>
+    <div class="container-fluid">
+	    <ul class="grid" id="grid">
+	    	<!--li class='grid-sizer'></li-->
+	    </ul>
+	</div>
 		
 	<footer>
 		
@@ -216,8 +206,7 @@
 		</p>
 		<p >2019 &copy; Tots els drets reservats</p>
 		<p class="text-right"> Powered by <a href="http://www.iva.cat">Iv&agrave; Domingo</a></p>
-		
-</footer>	
+	</footer>	
 		<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 		<script src="js/classie.js"></script>
 		<script src="js/AnimOnScroll.js"></script>
