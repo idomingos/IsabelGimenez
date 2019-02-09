@@ -1,5 +1,12 @@
+function getAbsolutePath() {
+    var loc = window.location;
+    var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
+    return loc.href.substring(0, loc.href.length - ((loc.pathname + loc.search + loc.hash).length - pathName.length));
+}
+
+
 var dUrl="https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/";
-var bUrl = window.location;
+var bUrl = getAbsolutePath();
 //var bUrl = "https://isa.eucatra.com/";
 var dossier = new Array();
 var msnry;
@@ -98,6 +105,7 @@ var pintarMenu = function(nom, data){
       element.classList.add('nav-link');
       element.classList.add('bg-light');
       let name = e.name;
+      if(name=="embaras") name = "embar&agrave;s";
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
       element.setAttribute("id", name);
       element.setAttribute("href",'#dossier');

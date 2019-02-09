@@ -24,6 +24,10 @@ body {
 p{
   color: black;
 }
+.img-thumbnail{
+  background-color: #ecefea;
+  padding: 0.001px;
+}
 
 .vertical-center {
   min-height: 60%;  /* Fallback for browsers do NOT support vh unit */
