@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Ivà Domingo i Solsona - http://www.iva.cat/
+ * Copyright (C) 2019 Ivà Domingo i Solsona - https://www.iva.cat/
  *
  *
  *  Redistribution and use in source and binary forms, with or without
