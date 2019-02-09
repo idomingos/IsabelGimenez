@@ -1,3 +1,43 @@
+/*
+ * Copyright (C) 2019 Ivà Domingo i Solsona - http://www.iva.cat/
+ *
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted provided that the following conditions
+ *  are met:
+ *
+ *    Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ *    Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the
+ *    distribution.
+ *
+ *    Neither the name of Ivà Domingo i Solsona nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ *  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ *  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ *  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ *  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ *  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ *  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ *  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+
+
+/* Obtener la URL de la página actual con JavaScript 
+ * https://cybmeta.com/obtener-la-url-de-la-pagina-actual-con-javascript-y-sus-componentes 
+ * Juan Padial jpadial@cybmeta.com
+ */
 function getAbsolutePath() {
     var loc = window.location;
     var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
@@ -5,36 +45,36 @@ function getAbsolutePath() {
 }
 
 
+
 var dUrl="https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/";
 var bUrl = getAbsolutePath();
-//var bUrl = "https://isa.eucatra.com/";
 var dossier = new Array();
 var msnry;
 var first=0;
 
 var browseDetection = function () {
 
- //Check if browser is IE
- if (navigator.userAgent.search("MSIE") >= 0) {
-        return '/jpg/';
- }
- //Check if browser is Chrome
- else if (navigator.userAgent.search("Chrome") >= 0) {
-        return '/webp/';
- }
- //Check if browser is Firefox 
- else if (navigator.userAgent.search("Firefox") >= 0) {
-        return '/jpg/';
- }
- //Check if browser is Safari
- else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
-        return '/jpg/';
- }
- //Check if browser is Opera
- else if (navigator.userAgent.search("Opera") >= 0) {
-        return '/webp/';
- }
- }
+	 //Check if browser is IE
+	 if (navigator.userAgent.search("MSIE") >= 0) {
+	        return '/jpg/';
+	 }
+	 //Check if browser is Chrome
+	 else if (navigator.userAgent.search("Chrome") >= 0) {
+	        return '/webp/';
+	 }
+	 //Check if browser is Firefox 
+	 else if (navigator.userAgent.search("Firefox") >= 0) {
+	        return '/jpg/';
+	 }
+	 //Check if browser is Safari
+	 else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+	        return '/jpg/';
+	 }
+	 //Check if browser is Opera
+	 else if (navigator.userAgent.search("Opera") >= 0) {
+	        return '/webp/';
+	 }
+ };
 
 var removeChilds = function(element){
   while(element.hasChildNodes()){
@@ -45,7 +85,7 @@ var removeChilds = function(element){
 var hiddenElement = function(){
   let element = document.getElementById("portada");
   element.style.display = "none";
-}
+};
 
 var portada = function(){
   let element = document.getElementById("portada");
@@ -53,8 +93,7 @@ var portada = function(){
   let grid = document.querySelector('.grid');
   removeChilds(grid);
 
-}
-
+};
 
 var addEvent = function(element, event, selector, func) {    
     element.addEventListener(event, function(e){
@@ -167,7 +206,7 @@ window.onload = function(){
   /* Get Dossier */
   getJSON(dUrl, function(err, data) {
       if (err !== null) {
-        alert('Something went wrong: ' + err);
+        alert("Disculpeu l\'error\nSi persisteix podeu adjuntar una captura de pantalla\na webmaster@isabelgimenez.cat\nGràcies.\n\nDescripcció:\n" + err);
       } 
       else {
         data.forEach(function(album,i){
@@ -193,5 +232,4 @@ window.onload = function(){
       }
     }
   );
-}
-
+};
