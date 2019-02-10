@@ -144,9 +144,9 @@ var pintarMenu = function(nom, data){
       element.classList.add('nav-link');
       element.classList.add('bg-light');
       let name = e.name;
+      element.setAttribute("id", name);
       if(name=="embaras") name = "embar&agrave;s";
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
-      element.setAttribute("id", name);
       element.setAttribute("href",'#dossier');
       element.addEventListener("click", hiddenElement);
       element.onclick = pintarImatges;
