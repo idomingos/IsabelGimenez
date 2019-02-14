@@ -60,7 +60,7 @@ p{
 }
 
 .grid-sizer{
-  width: 15%;
+  width: 12%;
 }
 
 /* ---- grid-item ---- */
@@ -87,14 +87,17 @@ p{
   cursor:pointer;
 }
 .grid img{
-  width: 100%;
-  opacity: 0.8;
+	/*max-width: 768px;
+	max-height: 768px;*/
+  	width: 100%;
+  	opacity: 0.8;
 }
 .grid img:hover{
   opacity: 1;
 }
 .grid-item--gran {
-  width: 66%;
+  width: 50%;
+  height: 50%;
   z-index: 2; /* above other items */
 }
 .grid-item--gran img{
@@ -173,10 +176,15 @@ footer p,a{
     
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
-      .sidenav {
+    	body { 
+			margin: 10px auto;
+			max-width: 100%;
+		}
+      	
+      	.sidenav {
         height: auto;
         padding: 15px;
-      }
+      	}
       .row.content {height:auto;}
       
     }
