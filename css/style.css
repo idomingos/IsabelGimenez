@@ -1,4 +1,39 @@
+/*
+ * Copyright (C) 2019 Ivà Domingo i Solsona - https://www.iva.cat/
+ *
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted provided that the following conditions
+ *  are met:
+ *
+ *    Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ *    Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the
+ *    distribution.
+ *
+ *    Neither the name of Ivà Domingo i Solsona nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ *  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ *  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ *  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ *  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ *  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ *  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ *  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
 @charset "utf-8";
+
 @font-face{
    font-family: "daniel";
    src: url(../font/daniel.ttf);
@@ -7,160 +42,91 @@
 * { box-sizing: border-box;}
 
 body { 
-  font-family: sans-serif; 
-  background-color: #ecefea;
-  
-  margin: 50px auto;
-  max-width: 90%;}
+	font-family: sans-serif; 
+	background-color: #ecefea;
+	margin: 50px auto;
+	max-width: 90%;
+}
 
-  header, #aaa{
-    background-color: black;
-  }
+header{
+	background-color: black;
+}
 
-  .bg-light, .navbar-light{
-    background-color: #ecefea !important;
-  }
+.bg-light, .navbar-light{
+	background-color: #ecefea !important;
+}
 
 p{
-  color: black;
+	color: black;
 }
+
 .img-thumbnail{
-  background-color: #ecefea;
-  padding: 0.001px;
+	background-color: #ecefea;
+	padding: 0.001px;
 }
 
 .vertical-center {
-  min-height: 60%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 60vh; /* These two lines are counted as one :-)       */
-  background-color: #ecefea;
-  display: flex;
-  align-items: center;
+	min-height: 60%;  /* Fallback for browsers do NOT support vh unit */
+	min-height: 60vh; /* These two lines are counted as one :-)       */
+	background-color: #ecefea;
+	display: flex;
+	align-items: center;
 }
 
 
 #site-title{
-  font-family: "daniel", serif;
-}
-
-
-/* ---- grid ---- */
-.grid li {
-  display: block;
-}
-.grid {
-  background: #ecefea;
-}
-
-
-/* clearfix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.grid-sizer{
-  width: 12%;
-}
-
-/* ---- grid-item ---- */
-
-/*.grid-item {
-  width: 15%;
-  float: left;
-}*/
-
-.grid-item--width2 { width: 320px; }
-.grid-item--width3 { width: 480px; }
-.grid-item--width4 { width: 640px; }
-
-.grid-item--height2 { height: 200px; }
-.grid-item--height3 { height: 260px; }
-.grid-item--height4 { height: 360px; }
-
-
-
-
-.grid-item:hover {
-  margin:5px;
-  line-height: 133px;
-  cursor:pointer;
-}
-.grid img{
-	/*max-width: 768px;
-	max-height: 768px;*/
-  	width: 100%;
-  	opacity: 0.8;
-}
-.grid img:hover{
-  opacity: 1;
-}
-.grid-item--gran {
-  width: 50%;
-  height: 50%;
-  z-index: 2; /* above other items */
-}
-.grid-item--gran img{
-  opacity:  1;
+	font-family: "daniel", serif;
 }
 
 #site-title{
-  color:#ecefea;
-  text-decoration: none;
-  font-size: 15px;
+	color:#ecefea;
+	text-decoration: none;
+	font-size: 15px;
 }
 
 header a{
-  color:white;
-  text-decoration: none;
+	color:white;
+	text-decoration: none;
 }
 
 footer p,a{
-  color:#3a7027;
-  text-decoration: none;
+	color:#3a7027;
+	text-decoration: none;
 }
 
-/* Animation */
+/* Animation words*/
 .anim {
-  position: relative;
-  font-family: sans-serif;
-  text-transform: uppercase;
-  /*font-size: 2em;*/
-  letter-spacing: 4px;
-  overflow: hidden;
-  background: linear-gradient(90deg, #000, #fff, #000);
-  background-repeat: no-repeat;
-  background-size: 80%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
-}
-.aFast{
-  animation: animate 5s linear infinite;
+	position: relative;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	/*font-size: 2em;*/
+	letter-spacing: 4px;
+	overflow: hidden;
+  	background: linear-gradient(90deg, #000, #fff, #000);
+  	background-repeat: no-repeat;
+  	background-size: 80%;
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
-.aSlow {
+.aFast{animation: animate 5s linear infinite;}
 
-   animation: animate 10s linear infinite;
- }
+.aSlow {animation: animate 10s linear infinite;}
 
 @keyframes animate {
-  0% {
-    background-position: -500%;
-  }
-  100% {
-    background-position: 500%;
-  }
+	0% {background-position: -500%;}
+  100% {background-position: 500%;}
 }
 
 /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-      border-style: none;
+    	margin-bottom: 0;
+    	border-radius: 0;
+    	border-style: none;
     }
 
     .container-fluid{
-      background-color: #ecefea;
+    	background-color: #ecefea;
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -169,9 +135,9 @@ footer p,a{
    
     /* Set black background color, white text and some padding */
     footer {
-      background-color: #ecefea;
-      color: white;
-      padding: 15px;
+    	background-color: #ecefea;
+    	color: white;
+    	padding: 15px;
     }
     
     /* On small screens, set height to 'auto' for sidenav and grid */
@@ -180,15 +146,15 @@ footer p,a{
 			margin: 10px auto;
 			max-width: 100%;
 		}
-      	
       	.sidenav {
-        height: auto;
-        padding: 15px;
+        	height: auto;
+        	padding: 15px;
       	}
-      .row.content {height:auto;}
+      	.row.content {height:auto;}
       
     }
-  .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
-      background-color: #222;
-      color:#ecefea;
+
+  	.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    	background-color: #222;
+    	color:#ecefea;
     }

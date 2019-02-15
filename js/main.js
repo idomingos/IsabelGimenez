@@ -32,8 +32,6 @@
  *
  */
 
-
-
 /* Obtener la URL de la página actual con JavaScript 
  * https://cybmeta.com/obtener-la-url-de-la-pagina-actual-con-javascript-y-sus-componentes 
  * Juan Padial jpadial@cybmeta.com
@@ -43,8 +41,6 @@ function getAbsolutePath() {
     var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
     return loc.href.substring(0, loc.href.length - ((loc.pathname + loc.search + loc.hash).length - pathName.length));
 }
-
-
 
 var dUrl="https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/";
 var bUrl = getAbsolutePath();
@@ -92,7 +88,6 @@ var portada = function(){
   element.style.display = "flex";
   let grid = document.querySelector('.grid');
   removeChilds(grid);
-
 };
 
 var addEvent = function(element, event, selector, func) {    
@@ -113,6 +108,7 @@ var addEvent = function(element, event, selector, func) {
         }
     });
 };
+
 var getPos = function(name){
   let pos=0;
   dossier.forEach(function(element,i){
@@ -135,6 +131,7 @@ var getJSON = function(url, callback) {
     };
     xhr.send();
 };
+
 var pintarMenu = function(nom, data){
   let menu = document.getElementById(nom);
   if (menu != undefined){
@@ -156,58 +153,72 @@ var pintarMenu = function(nom, data){
 };
 
 var pintarImatges = function(e){
-   e.preventDefault();
-  let grid = document.querySelector('.grid');
-  grid.className= '';
-  grid.classList.add('grid');
-  grid.classList.add("effect-"+Math.floor((Math.random() * 10) + 1));
+	e.preventDefault();
+  	let grid = document.querySelector('.grid');
+  	grid.className= '';
+  	grid.classList.add('grid');
+  	grid.classList.add("effect-"+Math.floor((Math.random() * 10) + 1));
 
-  removeChilds(grid);
-  dossier[getPos(e.target.id)].images.forEach(function(image, i){
-    image.classList.add("img-thumbnail");
-    let element = document.createElement("li");
-    element.classList.add("grid-item");
-    if (i==0){
-      element.setAttribute("id", "gran");
-    }
-    element.appendChild(image);
-    grid.insertBefore(element, grid.firstChild);
-  });
+  	removeChilds(grid);
+  	dossier[getPos(e.target.id)].images.forEach(function(image, i){
+	    image.classList.add("img-thumbnail");
+	    let element = document.createElement("li");
+	    element.classList.add("grid-item");
+	    if (i==0){
+	    	element.setAttribute("id", "gran");
+	    }
+	    if(image.width>image.height){
+	    	image.classList.add("horitzontal");
+	    }
+	    else{
+	    	image.classList.add("vertical");
+	    }
+	    element.appendChild(image);
+	    grid.insertBefore(element, grid.firstChild);
+  	});
+	var anim = new AnimOnScroll( document.getElementById( 'grid' ), {
+		    	minDuration : 0.4,
+		    	maxDuration : 0.7,
+				viewportFactor : 0.2
+		    	});
 
-  var anim = new AnimOnScroll( document.getElementById( 'grid' ), {
-        minDuration : 0.4,
-        maxDuration : 0.7,
-        viewportFactor : 0.2
-      } );
-  if (!first){
-    addEvent(grid, 'click', 'grid-item', function(e){ 
-      e.preventDefault();
-        target = e.target;
-        if(e.target.tagName=="IMG"){
-          target=e.target.parentElement;
-        }
-        if(target.tagName=="LI"){
-          target.classList.toggle('grid-item--gran');
-          if(target!=gran){
-            gran.classList.remove('grid-item--gran');
-          }
-          // trigger layout
-          gran=target;
-          anim.layout();
-        }
-    });
-    first++;
-  }
+  	if (!first){
+    	addEvent(grid, 'click', 'grid-item', function(e){ 
+    		let tipus;
+      		e.preventDefault();
+        	target = e.target;
+	        if(e.target.tagName=="IMG"){
+	        	if($(e.target).hasClass( "vertical" )){
+	        		tipus = 'grid-item--gran-vertical';
+	        	}
+	        	else{
+	        		tipus = 'grid-item--gran-horitzontal';
+	        	}
+	          target=e.target.parentElement;
+	        }
+	        if(target.tagName=="LI"){
+    		    target.classList.toggle(tipus);
+          		if(target!=gran){
+            		gran.classList.remove('grid-item--gran-horitzontal');
+            		gran.classList.remove('grid-item--gran-vertical');
+          		}
+          		// trigger layout
+          		gran=target;
+ 		        anim.layout();
+        	}
+    	});
+    	first++;
+  	}
 };
 
 window.onload = function(){
-  /* Get Dossier */
-  getJSON(dUrl, function(err, data) {
-      if (err !== null) {
-        alert("Disculpeu l\'error\nSi persisteix podeu adjuntar una captura de pantalla\na webmaster@isabelgimenez.cat\nGràcies.\n\nDescripcció:\n" + err);
-      } 
-      else {
-        data.forEach(function(album,i){
+	/* Get Dossier */
+  	getJSON(dUrl, function(err, data) {
+    	if (err !== null) {
+        	alert("Disculpeu l\'error\nSi persisteix podeu adjuntar una captura de pantalla\na webmaster@isabelgimenez.cat\nGràcies.\n\nDescripcció:\n" + err);
+      	} 
+    	else {
+        	data.forEach(function(album,i){
                       var Album = new Object();
                       Album.name = album.name;
                       Album.images = new Array();   
@@ -225,9 +236,8 @@ window.onload = function(){
                                       }
                       });
                       dossier.push(Album);
-        });
-        pintarMenu("Dossier", dossier);
-      }
-    }
-  );
+        	});
+        	pintarMenu("Dossier", dossier);
+      	}
+    });
 };

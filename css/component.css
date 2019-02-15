@@ -1,9 +1,46 @@
-/*.grid {
+/*
+ * Copyright (C) 2019 Ivà Domingo i Solsona - https://www.iva.cat/
+ *
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted provided that the following conditions
+ *  are met:
+ *
+ *    Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ *    Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the
+ *    distribution.
+ *
+ *    Neither the name of Ivà Domingo i Solsona nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ *  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ *  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ *  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ *  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ *  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ *  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ *  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+/* ---- grid ---- */
+/*
+.grid {
 	max-width: 69em;
 	list-style: none;
 	margin: 30px auto;
 	padding: 0;
-}*/
+}
+*/
 
 .grid-item {
 	/*display: block;*/
@@ -12,8 +49,6 @@
 	width: 15%;
 	/*opacity: 0;*/
 }
-
-
 
 .grid li.shown,
 .no-js .grid li,
@@ -28,6 +63,67 @@
 	display: block;
 	max-width: 100%;
 }
+
+.grid li {
+	display: block;
+}
+
+.grid {
+	background: #ecefea;
+}
+
+/* clearfix */
+.grid:after {
+	content: '';
+  	display: block;
+  	clear: both;
+}
+
+.grid-sizer{
+  	width: 12%;
+}
+
+.grid-item--width2 { width: 320px; }
+.grid-item--width3 { width: 480px; }
+.grid-item--width4 { width: 640px; }
+
+.grid-item--height2 { height: 200px; }
+.grid-item--height3 { height: 260px; }
+.grid-item--height4 { height: 360px; }
+
+.grid-item:hover {
+	margin:5px;
+	line-height: 133px;
+	cursor:pointer;
+}
+
+.grid img{
+  	width: 100%;
+  	opacity: 0.8;
+}
+
+.grid img:hover{
+	opacity: 1;
+}
+
+.grid-item--gran-horitzontal {
+	width: 50%;
+	z-index: 2; /* above other items */
+}
+
+.grid-item--gran-vertical {
+	width: 36%;
+	z-index: 2; /* above other items */
+}
+
+.grid-item--gran-horitzontal img{
+  opacity:  1;
+}
+
+.grid-item--gran-vertical img{
+  opacity:  1;
+}
+
 
 /* Effect 1: opacity */
 .grid.effect-1 li.animate {
@@ -212,17 +308,31 @@
 	100% { -webkit-transform: scale(1); transform: scale(1); opacity: 1; }
 }
 
+/* --- Media Screen --- */
 @media screen and (max-width: 900px) {
 	.grid-item {
-		width: 33%;
+		width: 25%;
 	}
-	
+	.grid-item--gran-horitzontal {
+  		width: 50%;
+  		z-index: 2; /* above other items */
+	}
+	.grid-item--gran-vertical {
+  		width: 35%;
+  		z-index: 2; /* above other items */
+	}
 }
-
 @media screen and (max-width: 400px) {
 	.grid-item {
 		float: center;
-		width: 55%;
+		width: 33%;
 	}
-	
+	.grid-item--gran-horitzontal {
+  		width: 90%;
+  		z-index: 2; /* above other items */
+	}
+	.grid-item--gran-vertical {
+  		width: 90%;
+  		z-index: 2; /* above other items */
+	}
 }
