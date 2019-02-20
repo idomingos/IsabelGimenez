@@ -35,14 +35,25 @@
 @charset "utf-8";
 
 @font-face{
-   font-family: "daniel";
-   src: url(../font/daniel.ttf);
+   font-family: daniel;
+   src: url('../font/daniel.ttf');
+}
+
+@font-face {
+  font-family: avro;
+  src: url('../font/Arvo-Regular.ttf');
+}
+
+@font-face {
+  font-family: avro;
+  src: url('../font/Arvo-Bold.ttf');
+  font-weight: bold;
 }
 
 * { box-sizing: border-box;}
 
 body { 
-	font-family: sans-serif; 
+	font-family: avro, ans-serif; 
 	background-color: #ecefea;
 	margin: 50px auto;
 	max-width: 90%;
@@ -58,6 +69,15 @@ header{
 
 p{
 	color: black;
+}
+
+.jumbotron{
+	padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #ecefea;
+	/*background-image: url('../abril1920.jpg');
+	background-size: cover;*/
+
 }
 
 .img-thumbnail{
@@ -90,7 +110,6 @@ header a{
 }
 
 footer p,a{
-	color:#3a7027;
 	text-decoration: none;
 }
 

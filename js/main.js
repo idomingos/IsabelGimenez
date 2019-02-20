@@ -85,9 +85,11 @@ var hiddenElement = function(){
 
 var portada = function(){
   let element = document.getElementById("portada");
-  element.style.display = "flex";
+  element.style.display = "block";
   let grid = document.querySelector('.grid');
   removeChilds(grid);
+  grid.setAttribute("class","grid");
+  grid.setAttribute("style",'');
 };
 
 var addEvent = function(element, event, selector, func) {    
@@ -212,7 +214,15 @@ var pintarImatges = function(e){
 };
 
 window.onload = function(){
-	/* Get Dossier */
+  let img = document.createElement("img");
+  img.src = "./abril1920.jpg";
+  img.classList.add('img-fluid');
+  img.setAttribute("max-width",'100%');
+
+  imagesLoaded( img, function(){
+    document.getElementById('portada').appendChild(img);
+  });
+	 /*Get Dossier */
   	getJSON(dUrl, function(err, data) {
     	if (err !== null) {
         	alert("Disculpeu l\'error\nSi persisteix podeu adjuntar una captura de pantalla\na webmaster@isabelgimenez.cat\nGràcies.\n\nDescripcció:\n" + err);
