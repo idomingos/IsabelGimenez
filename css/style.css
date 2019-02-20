@@ -101,7 +101,7 @@ p{
 #site-title{
 	color:#ecefea;
 	text-decoration: none;
-	font-size: 15px;
+	font-size: 1.5rem;
 }
 
 header a{
@@ -116,8 +116,8 @@ footer p,a{
 /* Animation words*/
 .anim {
 	position: relative;
-	font-family: sans-serif;
-	text-transform: uppercase;
+	/*font-family: sans-serif;
+	text-transform: uppercase;*/
 	/*font-size: 2em;*/
 	letter-spacing: 4px;
 	overflow: hidden;
@@ -165,10 +165,13 @@ footer p,a{
 			margin: 10px auto;
 			max-width: 100%;
 		}
+
       	.sidenav {
         	height: auto;
         	padding: 15px;
       	}
+      	#site-title{font-size: 1rem;
+}
       	.row.content {height:auto;}
       
     }
