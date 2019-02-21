@@ -45,7 +45,7 @@ function getAbsolutePath() {
 //var dUrl="https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/";
 
 var bUrl = getAbsolutePath();
-var dUrl=bUrl+'dossier.txt';
+var dUrl=bUrl+'dossier';
 var dossier = new Array();
 var msnry;
 var first=0;
@@ -225,7 +225,7 @@ window.onload = function(){
     document.getElementById('portada').appendChild(img);
   });
 	 /*Get Dossier */
-  	getJSON(dUrl, function(err, data) {
+  	getJSON(bUrl+'dossier.json', function(err, data) {
     	if (err !== null) {
         	alert("Disculpeu l\'error\nSi persisteix podeu adjuntar una captura de pantalla\na webmaster@isabelgimenez.cat\nGràcies.\n\nDescripcció:\n" + err);
       	} 
