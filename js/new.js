@@ -43,9 +43,8 @@ function getAbsolutePath() {
 }
 
 //var dUrl="https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/";
-
+var dUrl='./dossier.json';
 var bUrl = getAbsolutePath();
-var dUrl=bUrl+'dossier.txt';
 var dossier = new Array();
 var msnry;
 var first=0;
