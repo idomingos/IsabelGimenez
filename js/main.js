@@ -42,15 +42,14 @@ function getAbsolutePath() {
     return loc.href.substring(0, loc.href.length - ((loc.pathname + loc.search + loc.hash).length - pathName.length));
 }
 
-var dUrl="https://api.github.com/repos/idomingos/IsabelGimenez/contents/dossier/";
-
+var dUrl='./dossier.json';
 var bUrl = getAbsolutePath();
-//var dUrl=bUrl+'dossier/';
 var dossier = new Array();
 var msnry;
 var first=0;
 
 var browseDetection = function () {
+
 	 //Check if browser is IE
 	 if (navigator.userAgent.search("MSIE") >= 0) {
 	        return '/jpg/';
@@ -232,17 +231,19 @@ window.onload = function(){
         	data.forEach(function(album,i){
                       var Album = new Object();
                       Album.name = album.name;
-                      Album.images = new Array();   
-                      aURL = dUrl+album.name+browseDetection();
+                      Album.images = new Array(); 
+                      aURL = bUrl+album.path+browseDetection() + 'images.json';
                       getJSON(aURL, function(err, data){
                                       if(err !== null){
                                         alert('Something went wrong1: ' + err);
                                       }
                                       else{
                                         data.forEach(function(imatge,f){
-                                          let image = new Image();
-                                          image.src = bUrl+ imatge.path; 
-                                          Album.images.push(image);
+                                          if (imatge.name != "images.json"){
+                                            let image = new Image();
+                                            image.src = bUrl+ imatge.path; 
+                                            Album.images.push(image);
+                                          }
                                         });
                                       }
                       });
