@@ -233,7 +233,8 @@ window.onload = function(){
                       var Album = new Object();
                       Album.name = album.name;
                       Album.images = new Array();   
-                      aURL = dUrl+album.name+browseDetection();
+                      //aURL = dUrl+album.name+browseDetection();
+                      aURL = bUrl+album.name+browseDetection() + 'images.json';
                       getJSON(aURL, function(err, data){
                                       if(err !== null){
                                         alert('Something went wrong1: ' + err);
