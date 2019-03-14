@@ -241,9 +241,11 @@ window.onload = function(){
                                       }
                                       else{
                                         data.forEach(function(imatge,f){
-                                          let image = new Image();
-                                          image.src = bUrl+ imatge.path; 
-                                          Album.images.push(image);
+                                          if (imatge.name != "images.json"){
+                                            let image = new Image();
+                                            image.src = bUrl+ imatge.path; 
+                                            Album.images.push(image);
+                                          }
                                         });
                                       }
                       });
