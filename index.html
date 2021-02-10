@@ -2,9 +2,9 @@
 <html lang="ca" xml:lang="ca" xmlns="http://www.w3.org/1999/xhtml" >
 <head>
 	<!--Cache Control -->
-	<meta http-equiv="last-modified" content="Fri, 28 Dec 2018 10:00:46 GMT " />
-	<meta http-equiv="cache-control" content="Private" />
-	<meta http-equiv="Expires" content="3860000" />
+	<!meta content="Fri, 28 Dec 2018 10:00:46 GMT " http-equiv="last-modified"/-->
+	<!meta content="Private" http-equiv="cache-control"/-->
+	<meta content="3860000" http-equiv="refresh"/>
 	<!-- Info -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -37,7 +37,7 @@
 	<meta name="twitter:card" content="summary"/>
 	<meta name="twitter:description" content="Les obres d&#39;Isabel Gim&#233;nez Al&#237;as"/>
 	<!-- Icon -->
-	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="./icon/apple-touch-icon-57x57.png" />
+	<!--link rel="apple-touch-icon-precomposed" sizes="57x57" href="./icon/apple-touch-icon-57x57.png" /-->
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="./icon/apple-touch-icon-114x114.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./icon/apple-touch-icon-72x72.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./icon/apple-touch-icon-144x144.png" />
@@ -58,13 +58,19 @@
 	<!--meta name="msapplication-wide310x150logo" content="./icon/mstile-310x150.png" /-->
 	<meta name="msapplication-square310x310logo" content="./icon/mstile-310x310.png" />
 	
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script-->
+	<script src="js/library/jquery-3.5.1.min.js"></script>
+	<!--script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script-->
+	<script src="js/library/popper.min.js"></script>
+	<!--script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script-->
+	<script src="js/library/bootstrap.min.js"></script>
+
 	<script type="text/javascript" src="./js/main.js"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"-->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/modernizr.custom.js"></script>
-	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+	<!--script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script-->
+	<script src="js/library/masonry.pkgd.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	
@@ -84,7 +90,7 @@
                     </li>                        
                     <li class="nav-item dropdown">
 				    	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				   			Serveis
+				   			Galeria
 				       	</a>
 					   	<div id="Dossier" class="dropdown-menu bg-light" aria-labelledby="navbarDropdown"></div>
 				   	</li>                     
@@ -105,16 +111,16 @@
 	</header>
 
 <!-- Modal Qui -->
-	<div id="qui" class="modal animated bounceIn bg-dark" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="qui" class="modal animated bounceIn bg-dark" tabindex="-1" role="dialog" aria-labelledby="quiModalLabel" aria-hidden="true">
 	 	 <!-- dialog -->
 	  	<div class="modal-dialog modal-dialog-centered" role="document">
 	    	<!-- content -->
 	    	<div class="modal-content bg-light">
 	      		<!-- header -->
 	     		<div class="modal-header">
-	        		<h1 id="myModalLabel" class="modal-title">
+	        		<h2 id="quiModalLabel" class="modal-title">
 	          			Qui s&oacute;c
-	        		</h1>
+	        		</h2>
 	      		</div>
 	      		<!-- header -->
 	     		<!-- body -->
@@ -147,9 +153,9 @@
 	    	<div class="modal-content bg-light">
 	      		<!-- header -->
 	     		<div class="modal-header">
-	        		<h1 id="myModalLabel" class="modal-title">
+	        		<h2 id="myModalLabel" class="modal-title">
 	          			Contacte
-	        		</h1>
+	        		</h2>
 	      		</div>
 	      		<!-- header -->
 	     		<!-- body -->
@@ -202,7 +208,8 @@
 		<p >2019 &copy; Tots els drets reservats</p>
 		<p class="text-right"> Powered by <a href="http://www.iva.cat">Iv&agrave; Domingo</a></p>
 	</footer>	
-		<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+		<!--script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script-->
+		<script src="js/library/imagesloaded.pkgd.min.js"></script>
 		<script src="js/classie.js"></script>
 		<script src="js/AnimOnScroll.js"></script>
 </body>
