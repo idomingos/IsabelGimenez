@@ -223,8 +223,8 @@ window.onload = function(){
 
 
     //document.getElementById("pro").onresize= function (){
-        let h =window.innerHeight*0.7;
-        document.getElementById("pro").style.height= h+"px";
+     //   let h =window.innerHeight*0.7;
+       // document.getElementById("pro").style.height= h+"px";
    // }
 
     /* Portada */
