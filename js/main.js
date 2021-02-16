@@ -223,7 +223,7 @@ window.onload = function(){
 
 
     //document.getElementById("pro").onresize= function (){
-        let h =window.innerHeight*0.8;
+        let h =window.innerHeight*0.7;
         document.getElementById("pro").style.height= h+"px";
    // }
 
