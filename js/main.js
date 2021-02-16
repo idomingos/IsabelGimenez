@@ -42,48 +42,48 @@ function getAbsolutePath() {
     return loc.href.substring(0, loc.href.length - ((loc.pathname + loc.search + loc.hash).length - pathName.length));
 }
 
-var dUrl='./dossier.json';
-var bUrl = getAbsolutePath();
-var dossier = new Array();
-var msnry;
-var first=0;
+const dUrl = './dossier.json';
+const bUrl = getAbsolutePath();
+let dossier = [];
+//var msnry;
+let first = 0;
 
-var browseDetection = function () {
+function browseDetection () {
 
-	 //Check if browser is IE
-	 if (navigator.userAgent.search("MSIE") >= 0) {
-	        return '/jpg/';
-	 }
-	 //Check if browser is Chrome
-	 else if (navigator.userAgent.search("Chrome") >= 0) {
-	        return '/webp/';
-	 }
-	 //Check if browser is Firefox 
-	 else if (navigator.userAgent.search("Firefox") >= 0) {
-	        return '/jpg/';
-	 }
-	 //Check if browser is Safari
-	 else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
-	        return '/jpg/';
-	 }
-	 //Check if browser is Opera
-	 else if (navigator.userAgent.search("Opera") >= 0) {
-	        return '/webp/';
-	 }
- };
+    //Check if browser is IE
+    if (navigator.userAgent.search("MSIE") >= 0) {
+        return '/jpg/';
+    }
+    //Check if browser is Chrome
+    else if (navigator.userAgent.search("Chrome") >= 0) {
+        return '/webp/';
+    }
+    //Check if browser is Firefox
+    else if (navigator.userAgent.search("Firefox") >= 0) {
+        return '/jpg/';
+    }
+    //Check if browser is Safari
+    else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+        return '/jpg/';
+    }
+    //Check if browser is Opera
+    else if (navigator.userAgent.search("Opera") >= 0) {
+        return '/webp/';
+    }
+}
 
-var removeChilds = function(element){
+let removeChilds = function(element){
   while(element.hasChildNodes()){
     element.removeChild(element.firstChild);
   }
 };
 
-var hiddenElement = function(){
+let hiddenElement = function(){
   let element = document.getElementById("portada");
   element.style.display = "none";
 };
 
-var portada = function(){
+let portada = function(){
   let element = document.getElementById("portada");
   element.style.display = "block";
   let grid = document.querySelector('.grid');
@@ -92,10 +92,10 @@ var portada = function(){
   grid.setAttribute("style",'');
 };
 
-var addEvent = function(element, event, selector, func) {    
+function addEvent (element, event, selector, func) {
     element.addEventListener(event, function(e){
-        var that = this;
-        var helper = function (el) {
+        let that = this;
+        let helper = function (el) {
             if (el !== that) {
                 if (el.classList.contains(selector)) {
                     return el;
@@ -103,38 +103,38 @@ var addEvent = function(element, event, selector, func) {
                 return helper(el.parentNode);
             }
             return false;
-        }
-        var el = helper(e.target);
+        };
+        let el = helper(e.target);
         if (el !== false) {
             func.call(this, e);
         }
     });
-};
+}
 
-var getPos = function(name){
+function getPos (name){
   let pos=0;
   dossier.forEach(function(element,i){
-    if(element.name == name)  pos= i;
+    if(element.name == name)  pos = i;
   });
   return pos;
-};
+}
 
-var getJSON = function(url, callback) {
-    var xhr = new XMLHttpRequest();
+function getJSON (url, callback) {
+    let xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.responseType = 'json';
     xhr.onload = function() {
-      var status = xhr.status;
-      if (status === 200) {
+        let status = xhr.status;
+        if (status === 200) {
         callback(null, xhr.response);
       } else {
         callback(status, xhr.response);
       }
     };
     xhr.send();
-};
+}
 
-var pintarMenu = function(nom, data){
+function pintarMenu (nom, data){
   let menu = document.getElementById(nom);
   if (menu != undefined){
     data.forEach(function(e){
@@ -152,9 +152,9 @@ var pintarMenu = function(nom, data){
       menu.appendChild(element);      
     });
   }
-};
+}
 
-var pintarImatges = function(e){
+function pintarImatges (e){
 	e.preventDefault();
   	let grid = document.querySelector('.grid');
   	grid.className= '';
@@ -175,10 +175,16 @@ var pintarImatges = function(e){
 	    else{
 	    	image.classList.add("vertical");
 	    }
-	    element.appendChild(image);
+
+       // imagesLoaded( image, function(){
+            element.appendChild(image);
+        //});
+
+
+
 	    grid.insertBefore(element, grid.firstChild);
   	});
-	var anim = new AnimOnScroll( document.getElementById( 'grid' ), {
+	let anim = new AnimOnScroll( document.getElementById( 'grid' ), {
 		    	minDuration : 0.4,
 		    	maxDuration : 0.7,
 				viewportFactor : 0.2
@@ -188,7 +194,7 @@ var pintarImatges = function(e){
     	addEvent(grid, 'click', 'grid-item', function(e){ 
     		let tipus;
       		e.preventDefault();
-        	target = e.target;
+        	let target = e.target;
 	        if(e.target.tagName=="IMG"){
 	        	if($(e.target).hasClass( "vertical" )){
 	        		tipus = 'grid-item--gran-vertical';
@@ -211,37 +217,48 @@ var pintarImatges = function(e){
     	});
     	first++;
   	}
-};
+}
 
 window.onload = function(){
-  let img = document.createElement("img");
+
+
+    //document.getElementById("pro").onresize= function (){
+        let h =window.innerHeight*0.8;
+        document.getElementById("pro").style.height= h+"px";
+   // }
+
+    /* Portada */
+ /* let img = document.createElement("img");
   img.src = "./abril1920.jpg";
   img.classList.add('img-fluid');
   img.setAttribute("max-width",'100%');
 
   imagesLoaded( img, function(){
     document.getElementById('portada').appendChild(img);
-  });
+  });*/
+
 	 /*Get Dossier */
   	getJSON(dUrl, function(err, data) {
     	if (err !== null) {
         	alert("Disculpeu l\'error\nSi persisteix podeu adjuntar una captura de pantalla\na webmaster@isabelgimenez.cat\nGràcies.\n\nDescripcció:\n" + err);
       	} 
     	else {
-        	data.forEach(function(album,i){
-                      var Album = new Object();
-                      Album.name = album.name;
-                      Album.images = new Array(); 
-                      aURL = bUrl+album.path+browseDetection() + 'images.json';
+        	data.forEach(function(album){
+                let Album = new Object();
+                Album.name = album.name;
+                      Album.images = [];
+                      let aURL = bUrl+album.path+browseDetection() + 'images.json';
                       getJSON(aURL, function(err, data){
                                       if(err !== null){
-                                        alert('Something went wrong1: ' + err);
+                                        alert('Something went wrong: ' + err);
                                       }
                                       else{
-                                        data.forEach(function(imatge,f){
+                                        data.forEach(function(imatge){
+                                            console.log(imatge);
                                           if (imatge.name != "images.json"){
                                             let image = new Image();
-                                            image.src = bUrl+ imatge.path; 
+                                            image.src = bUrl + imatge.path;
+                                            image.alt = imatge.description;
                                             Album.images.push(image);
                                           }
                                         });
