@@ -92,8 +92,8 @@
 							Sessions
 						</a>
 						<div id="Sessions" class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-							<button class="dropdown-item nav-link bg-light" type="button" onclick="document.getElementById('Sbebe').style.display= 'block';">Nounat</button>
-							<button class="dropdown-item nav-link bg-light" type="button">Bebé</button>
+							<button class="dropdown-item nav-link bg-light" type="button" onclick="showSession('Snounat')">Nounat</button>
+							<button class="dropdown-item nav-link bg-light" type="button" onclick="showSession('Sbebe')">Bebé</button>
 							<button class="dropdown-item nav-link bg-light" type="button">Infantil</button>
 							<button class="dropdown-item nav-link bg-light" type="button">Embar&agrave;s</button>
 							<button class="dropdown-item nav-link bg-light" type="button">Vals regal</button>
@@ -106,7 +106,8 @@
 					   	<div id="Dossier" class="dropdown-menu bg-light" aria-labelledby="navbarDropdown"></div>
 				   	</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#qui" href="#" >Qui s&oacute;c</a>
+						<!--a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#qui" href="#" >Qui s&oacute;c</a-->
+						<a class="nav-link js-scroll-trigger" href="#" onclick="showSession('Squi')">Qui s&oacute;c</a>
 					</li>
 					<li class="nav-item">
                        	<a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#contacte" href="#">Contacte</a>
@@ -123,6 +124,8 @@
   			</div>
   		</nav>
 	</header>
+
+
 
 <!-- Modal Qui -->
 	<div id="qui" class="modal animated bounceIn bg-dark" tabindex="-1" role="dialog" aria-labelledby="quiModalLabel" aria-hidden="true">
@@ -265,15 +268,82 @@
 	</div>
 	<!-- /Gallery -->
 	<!--sessions-->
+	<div class="container-fluid">
 	<section class="container-fluid" id="gsessio">
+
+		<section style="display: none" id="Squi">
+			<div>
+				<img src="./isa.jpg" hspace="5" vspace="5" width="25%" style="float: left;"/>
+				<p>Hola, hem dic Isabel, una persona creativa i inquieta que amb la fotografia he trobat la manera d'expressar-me i emocionar-me.</p>
+				<p>Vaig començar amb la fotografia com a hobby i poc a poc s’ha anat convertint en una part molt important en la meva vida. Vaig decidir formar-me amb el que m’omple de veritat que és la fotografia d’embaràs, nounat i bebès. Penso que és molt important la formació per aquesta especialitat tant delicada.</p>
+				<p>M'agrada captar les emocions del moment, són efímers i únics i hem sento privilegiada de poder captar-los amb la càmara.</p>
+				<h3>L'estudi</h3>
+				<p>Tinc un petit estudi a Lleida totalmente equipat que he anat adequant amb aquest tipus de fotografía on hi ha tot el necessari per crear escenaris tendres i únics.</p>
+				<p>El que pretenc és que els clients se sentin ben a gust per a que les sessions siguin naturals i emocionants.</p>
+			</div>
+		</section>
+
+
+		<article style="display: none" id="Snounat">
+			<h2>Nounat (7 a 14 dies)</h2>
+			<section>
+				<h3>Quin és el millor moment per a fer fotos de recent nascut?</h3>
+				<p>Aquest és un moment molt dolç, que passa molt ràpid i tinc l’oportunitat de fer que perduri en el temps. És molt bonic que les famílies puguin tenir aquests records per sempre. </p>
+				<p>Aquest tipus de reportatge s’ha de realizar entre els 7 i 14 dies després del naixement.</p>
+				<p>És el més recomanable ja que desrpés van perdent la flexibilitat, están més irritables i dormen menys hores.</p>
+			</section>
+			<section>
+				<h3>Quan s’ha de reservar?</h3>
+				<p>És important tenir la sessió reservada al menys 1 mes abans del naixement per poder organizar després la sessió.  </p>
+			</section>
+			<section>
+				<h3>On fem la sessió?</h3>
+				<p>Les sessions de nounat les realitzo a l’estudi on disposo de tot el necessari.</p>
+			</section>
+			<section>
+				<h3>Quan dura la sessió?</h3>
+				<p>Aquest tipus de sessions són llargues duren entre 3-3,5 hores., ja que tenim que fer descansos per poder alimentar i dormir al bebé. Cada sessió és diferent i anem al seu ritme.</p>
+			</section>
+			<section>
+				<h3>Que tinc que portar per la sessió?</h3>
+				<p>A l’estudi disposo de tot l’atrezzo necessari per fer aquest tipus de sessió, que triareu el mateix dia. Encara que si teniu un gorret, mantenta o peluix que us agrada ho podeu portar i mirem on ho podem encaixar.</p>
+			</section>
+			<section>
+				<h3>També surt la familia a les fotos de nounat?</h3>
+				<p>Si, sempre que vosaltres vulgueu faig fotografíes amb els pares i si hi ha germans/es grans o mascota.</p>
+			</section>
+			<section>
+				<h3>Què inclou la sessió?</h3>
+				<p>El temps i dedicació de la sessió, el montatge de sets&atrezzo i el postprocessat de les imatges en alta qualitat.</p>
+				<p>Entrega de 30 imatges finals en alta resolució en un cd (també enviades per e-mail) i sempre amb possibilitat d’ampliar, tant en número de fotografíes com amb àlbums, quadres o impressions.</p>
+			</section>
+		</article>
 		<article style="display: none" id="Sbebe">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi assumenda aut beatae culpa cupiditate dolorem error expedita explicabo fugiat harum illo iste laboriosam, magnam minima nemo nostrum perferendis perspiciatis placeat possimus quaerat quasi qui quibusdam, quod recusandae rem unde voluptatum. Aliquid blanditiis delectus deserunt dolor error fuga fugit, iusto, nam quaerat quibusdam recusandae ullam vitae voluptates. A accusamus accusantium, blanditiis corporis culpa debitis deleniti doloremque dolorum eaque eos excepturi iste libero magnam natus necessitatibus non numquam omnis perferendis quam, ratione recusandae repellat reprehenderit sapiente sed tempora temporibus totam vel velit vero voluptates? A facere laborum nesciunt nihil repellendus vero. Ad atque beatae consectetur consequatur deleniti distinctio, dolore dolores doloribus error esse fugit incidunt laborum libero minus obcaecati perspiciatis provident quaerat qui rerum saepe tempore.</p>
+			<h2>Bebé (de 6 a 10 mesos)</h2>
+			<section>
+				<dl>
+					<dt>Quin és el millor moment per a fer fotos al teu bebé?</dt>
+						<dd>Entre els 6 y els 10 mesos, quan són capaços de quedar-se sentadets sense ajuda. És un moment molt bonic.  (Encara que a partir dels 4 mesos ja es pot fer, sobretot si es vol fer un seguiment del primer any).</dd>
+					<dt>On fem la sessió a l’estudi o exterior?</dt>
+						<dd>Es pot fer al lloc que més t’agradi a l’estudi on tinc tot l’atrezzo per les sessions o a l’exterior on també es pot portar una mica d’atrezzo. A la primavera i a la tardor son les millors èpoques per fer exteriors i sempre es realitzen a la tarda més o menys 1 hora abans que caigui el sol, així que dependrà de l’època de l’any l’hora de la sessió.</dd>
+					<dt>Quan dura la sessió?</dt>
+						<dd>Les sessions de bebé duren entre 1 – 1,5 hores, amb diferents canvis de roba, i escenari, tant el bebé com els pares/germans/es.</dd>
+					<dt>Que tinc que portar per la sessió?</dt>
+						<dd>A l’estudi disposo de tot l’atrezzo necessari per fer aquest tipus de sessió, i al contractar-la us enviaré una mica d’informació sobre la roba que podeu portar.</dd>
+					<dt>També surt la familia a les fotos de bebé?</dt>
+						<dd>Si, sempre que vosaltres vulgueu faig fotografíes amb els pares i si hi ha germans/es o mascota.</dd>
+					<dt>Què inclou la sessió?</dt>
+						<dd>El temps i dedicació de la sessió, el montatge de sets&atrezzo i el postprocessat de les imatges en alta qualitat.</dd>
+						<dd>Entrega de 30 imatges finals en alta resolució en un cd (també enviades per e-mail) i sempre amb possibilitat d’ampliar, tant en número de fotografíes com amb àlbums, quadres o impressions. </dd>
+				</dl>
+			</section>
+
 		</article>
 
 
 
 	</section>
-
+	</div>
 	<!--/sessions-->
 
 		

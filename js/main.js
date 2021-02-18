@@ -81,7 +81,22 @@ let removeChilds = function(element){
 let hiddenElement = function(){
   let element = document.getElementById("portada");
   element.style.display = "none";
+  hiddenSessions();
 };
+
+let hiddenSessions = function(){
+    let n = document.getElementById("gsessio").children;
+    for (let i=0; i <n.length; i++){
+        n[i].style.display = "none";
+    }
+}
+
+let showSession = function(id){
+    portada();
+    document.getElementById("portada").style.display="none";
+    document.getElementById(id).style.display = "block";
+
+}
 
 let portada = function(){
   let element = document.getElementById("portada");
@@ -90,12 +105,7 @@ let portada = function(){
   removeChilds(grid);
   grid.setAttribute("class","grid");
   grid.setAttribute("style",'');
-  let n = document.getElementById("gsessio").children
-    console.log(n);
-    for (let i=0; i <n.length; i++){
-      n[i].style.display = "none";
-      console.log(n[i]);
-  }
+  hiddenSessions();
 
 };
 
@@ -203,7 +213,8 @@ function pintarImatges (e){
       		e.preventDefault();
         	let target = e.target;
 	        if(e.target.tagName==="IMG"){
-	        	if($(e.target).hasClass( "vertical" )){
+	        	//if($(e.target).hasClass( "vertical" )){
+                if(e.target.classList.contains( "vertical" )){
 	        		tipus = 'grid-item--gran-vertical';
 	        	}
 	        	else{
@@ -218,7 +229,7 @@ function pintarImatges (e){
             		gran.classList.remove('grid-item--gran-vertical');
           		}
           		// trigger layout
-          		gran=target;
+          		gran = target;
  		        anim.layout();
         	}
     	});
@@ -261,7 +272,6 @@ window.onload = function(){
                                       }
                                       else{
                                         data.forEach(function(imatge){
-                                            console.log(imatge);
                                           if (imatge.name !== "images.json"){
                                             let image = new Image();
                                             image.src = bUrl + imatge.path;
