@@ -37,8 +37,8 @@
  * Juan Padial jpadial@cybmeta.com
  */
 function getAbsolutePath() {
-    var loc = window.location;
-    var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
+    let loc = window.location;
+    let pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
     return loc.href.substring(0, loc.href.length - ((loc.pathname + loc.search + loc.hash).length - pathName.length));
 }
 
@@ -121,7 +121,7 @@ function addEvent (element, event, selector, func) {
 function getPos (name){
   let pos=0;
   dossier.forEach(function(element,i){
-    if(element.name == name)  pos = i;
+    if(element.name === name)  pos = i;
   });
   return pos;
 }
@@ -143,7 +143,7 @@ function getJSON (url, callback) {
 
 function pintarMenu (nom, data){
   let menu = document.getElementById(nom);
-  if (menu != undefined){
+  if (menu !== undefined){
     data.forEach(function(e){
       let element = document.createElement("a");
       element.classList.add('dropdown-item');
@@ -151,7 +151,7 @@ function pintarMenu (nom, data){
       element.classList.add('bg-light');
       let name = e.name;
       element.setAttribute("id", name);
-      if(name=="embaras") name = "embar&agrave;s";
+      if(name === "embaras") name = "embar&agrave;s";
       element.innerHTML = name.toUpperCase().charAt(0)+name.substring(1,name.length);
       element.setAttribute("href",'#dossier');
       element.addEventListener("click", hiddenElement);
@@ -173,7 +173,7 @@ function pintarImatges (e){
 	    image.classList.add("img-thumbnail");
 	    let element = document.createElement("li");
 	    element.classList.add("grid-item");
-	    if (i==0){
+	    if (i===0){
 	    	element.setAttribute("id", "gran");
 	    }
 	    if(image.width>image.height){
@@ -202,7 +202,7 @@ function pintarImatges (e){
     		let tipus;
       		e.preventDefault();
         	let target = e.target;
-	        if(e.target.tagName=="IMG"){
+	        if(e.target.tagName==="IMG"){
 	        	if($(e.target).hasClass( "vertical" )){
 	        		tipus = 'grid-item--gran-vertical';
 	        	}
@@ -211,9 +211,9 @@ function pintarImatges (e){
 	        	}
 	          target=e.target.parentElement;
 	        }
-	        if(target.tagName=="LI"){
+	        if(target.tagName==="LI"){
     		    target.classList.toggle(tipus);
-          		if(target!=gran){
+          		if(target!==gran){
             		gran.classList.remove('grid-item--gran-horitzontal');
             		gran.classList.remove('grid-item--gran-vertical');
           		}
@@ -251,7 +251,7 @@ window.onload = function(){
       	} 
     	else {
         	data.forEach(function(album){
-                let Album = new Object();
+                let Album = {};
                 Album.name = album.name;
                       Album.images = [];
                       let aURL = bUrl+album.path+browseDetection() + 'images.json';
@@ -262,7 +262,7 @@ window.onload = function(){
                                       else{
                                         data.forEach(function(imatge){
                                             console.log(imatge);
-                                          if (imatge.name != "images.json"){
+                                          if (imatge.name !== "images.json"){
                                             let image = new Image();
                                             image.src = bUrl + imatge.path;
                                             image.alt = imatge.description;
