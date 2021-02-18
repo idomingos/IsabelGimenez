@@ -90,6 +90,13 @@ let portada = function(){
   removeChilds(grid);
   grid.setAttribute("class","grid");
   grid.setAttribute("style",'');
+  let n = document.getElementById("gsessio").children
+    console.log(n);
+    for (let i=0; i <n.length; i++){
+      n[i].style.display = "none";
+      console.log(n[i]);
+  }
+
 };
 
 function addEvent (element, event, selector, func) {

@@ -92,7 +92,7 @@
 							Sessions
 						</a>
 						<div id="Sessions" class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-							<button class="dropdown-item nav-link bg-light" type="button">Nounat</button>
+							<button class="dropdown-item nav-link bg-light" type="button" onclick="document.getElementById('Sbebe').style.display= 'block';">Nounat</button>
 							<button class="dropdown-item nav-link bg-light" type="button">Bebé</button>
 							<button class="dropdown-item nav-link bg-light" type="button">Infantil</button>
 							<button class="dropdown-item nav-link bg-light" type="button">Embar&agrave;s</button>
@@ -200,29 +200,38 @@
 				<li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
 				<li data-target="#carouselIndicators" data-slide-to="1"></li>
 				<li data-target="#carouselIndicators" data-slide-to="2"></li>
+				<li data-target="#carouselIndicators" data-slide-to="3"></li>
 			</ol>
 			<div id="pro" class="carousel-inner" role="listbox" >
-				<div class="carousel-item active" >
-					<a href="#"><img class="d-block" src="./dossier/infantil/webp/IMG_4217.webp" alt="First slide" style="margin:auto"></a>
+				<div class="carousel-item active">
+					<img class="d-block w-75" src="./abril1920.jpg" alt="Abril Blazquez" style="margin:auto; cursor: alias;" onclick="document.getElementById('infantil').click()">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Infantil</h5>
+						<p>Abril</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-75" src="./dossier/comunions/jpg/IMG_0442.jpg" alt="Comunions" style="margin:auto; cursor: alias;" onclick="document.getElementById('comunions').click()">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Comunions</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, odit.</p>
+					</div>
+				</div>
+				<div class="carousel-item" >
+					<img class="d-block" src="./dossier/infantil/jpg/IMG_4217.jpg" alt="First slide" style="margin:auto; cursor: alias;" onclick="document.getElementById('infantil').click()">
 					<div class="carousel-caption d-none d-md-block">
 						<h5>First slide</h5>
-						<p>Quim</p>
+						<p>Lorem ipsum dolor sit amet.</p>
 					</div>
 				</div>
 				<div class="carousel-item">
-					<a href="#"><img class="d-block w-100" src="./abril1920.jpg" alt="Second slide"></a>
+					<img class="d-block w-75" src="./dossier/bebe/jpg/IMG_8922.jpg" alt="Second slide" style="margin:auto; cursor: alias;" onclick="document.getElementById('bebe').click()">
 					<div class="carousel-caption d-none d-md-block">
-						<h5>Second slide</h5>
-						<p>Abril</p>
+						<h5>Bebe</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam assumenda at consequuntur delectus ea facilis ipsam officiis perspiciatis reprehenderit.</p>
 					</div>
 				</div>
-				<div class="carousel-item">
-					<img class="d-block w-100" src="./abril1920.jpg" alt="Third slide">
-					<div class="carousel-caption d-none d-md-block">
-						<h5>Third slide</h5>
-						<p>Abril</p>
-					</div>
-				</div>
+
 			</div>
 			<a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -255,6 +264,18 @@
 	    </ul>
 	</div>
 	<!-- /Gallery -->
+	<!--sessions-->
+	<section class="container-fluid" id="gsessio">
+		<article style="display: none" id="Sbebe">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi assumenda aut beatae culpa cupiditate dolorem error expedita explicabo fugiat harum illo iste laboriosam, magnam minima nemo nostrum perferendis perspiciatis placeat possimus quaerat quasi qui quibusdam, quod recusandae rem unde voluptatum. Aliquid blanditiis delectus deserunt dolor error fuga fugit, iusto, nam quaerat quibusdam recusandae ullam vitae voluptates. A accusamus accusantium, blanditiis corporis culpa debitis deleniti doloremque dolorum eaque eos excepturi iste libero magnam natus necessitatibus non numquam omnis perferendis quam, ratione recusandae repellat reprehenderit sapiente sed tempora temporibus totam vel velit vero voluptates? A facere laborum nesciunt nihil repellendus vero. Ad atque beatae consectetur consequatur deleniti distinctio, dolore dolores doloribus error esse fugit incidunt laborum libero minus obcaecati perspiciatis provident quaerat qui rerum saepe tempore.</p>
+		</article>
+
+
+
+	</section>
+
+	<!--/sessions-->
+
 		
 	<footer>
 		<p>Les imatges incloses en aquest espai s&oacute;n c&ograve;pies de les originals.</p>
