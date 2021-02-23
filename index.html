@@ -76,6 +76,26 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	
 </head>
+<style>
+	html {
+		position: relative;
+		min-height: 100%;
+	}
+	body {
+		/* Margin bottom by footer height*/
+		margin-bottom: 60px;
+	}
+	.footer {
+		position: marker;
+		bottom: 0;
+		width: 100%;
+		/* Set the fixed height of the footer here */
+		height: 20%;
+		line-height: 15px; /* Vertically center the text there */
+		/*background-color: #f5f5f5;*/
+	}
+
+</style>
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -125,10 +145,10 @@
   		</nav>
 	</header>
 
-
-
-<!-- Modal Qui -->
-	<div id="qui" class="modal animated bounceIn bg-dark" tabindex="-1" role="dialog" aria-labelledby="quiModalLabel" aria-hidden="true">
+	<main role="main" class="container">
+		<div class="row">
+			<!-- Modal Qui -->
+			<div id="qui" class="modal animated bounceIn bg-dark" tabindex="-1" role="dialog" aria-labelledby="quiModalLabel" aria-hidden="true">
 	 	 <!-- dialog -->
 	  	<div class="modal-dialog modal-dialog-centered" role="document">
 	    	<!-- content -->
@@ -160,10 +180,9 @@
 	  	</div>
   		<!-- dialog -->
 	</div>
-	<!-- Modal Qui -->
-
-<!-- Modal Contacte -->
-	<div id="contacte" class="modal animated bounceIn bg-dark" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<!-- Modal Qui -->
+			<!-- Modal Contacte -->
+			<div id="contacte" class="modal animated bounceIn bg-dark" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	 	 <!-- dialog -->
 	  	<div class="modal-dialog modal-dialog-centered" role="document">
 	    	<!-- content -->
@@ -194,18 +213,18 @@
 	  	</div>
   		<!-- dialog -->
 	</div>
-	<!-- Modal Contacte -->
-
-	<!--Portada-->
-	<section class="jumbotron " id="portada">
-		<div id="carouselIndicators" class="carousel slide" data-ride="carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-				<li data-target="#carouselIndicators" data-slide-to="1"></li>
-				<li data-target="#carouselIndicators" data-slide-to="2"></li>
-				<li data-target="#carouselIndicators" data-slide-to="3"></li>
-			</ol>
-			<div id="pro" class="carousel-inner" role="listbox" >
+			<!-- Modal Contacte -->
+			<!--Portada-->
+			<section class="col-12" id="portada">
+				<div class="jumbotron">
+				<div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselIndicators" data-slide-to="2"></li>
+						<li data-target="#carouselIndicators" data-slide-to="3"></li>
+					</ol>
+				<div id="pro" class="carousel-inner" role="listbox" >
 				<div class="carousel-item active">
 					<img class="d-block w-75" src="./abril1920.jpg" alt="Abril Blazquez" style="margin:auto; cursor: alias;" onclick="document.getElementById('infantil').click()">
 					<div class="carousel-caption d-none d-md-block">
@@ -257,23 +276,23 @@
 			<!--/div>
 		</div>
 		</div-->
+				</div>
 	</section>
-	<!--Portada-->
+			<!--Portada-->
 	
 	<!-- Gallery -->
-    <div class="container-fluid" id="gallery">
+    <div class="col-12" id="gallery">
 	    <ul class="grid" id="grid">
 	    	<!--li class='grid-sizer'></li-->
 	    </ul>
 	</div>
 	<!-- /Gallery -->
 	<!--sessions-->
-	<div class="container-fluid">
-	<section class="container-fluid" id="gsessio">
-
-		<section style="display: none" id="Squi">
+	<div class="col-12" style="margin: auto">
+		<div class="container d-flex justify-content-center" id="gsessio">
+			<section style="display: none" id="Squi">
 			<div>
-				<img src="./isa.jpg" hspace="5" vspace="5" width="25%" style="float: left;"/>
+				<img src="./isa.jpg" width="3131" style="float: left;" alt="Isabel Gimenez"/>
 				<p>Hola, hem dic Isabel, una persona creativa i inquieta que amb la fotografia he trobat la manera d'expressar-me i emocionar-me.</p>
 				<p>Vaig començar amb la fotografia com a hobby i poc a poc s’ha anat convertint en una part molt important en la meva vida. Vaig decidir formar-me amb el que m’omple de veritat que és la fotografia d’embaràs, nounat i bebès. Penso que és molt important la formació per aquesta especialitat tant delicada.</p>
 				<p>M'agrada captar les emocions del moment, són efímers i únics i hem sento privilegiada de poder captar-los amb la càmara.</p>
@@ -282,9 +301,16 @@
 				<p>El que pretenc és que els clients se sentin ben a gust per a que les sessions siguin naturals i emocionants.</p>
 			</div>
 		</section>
-
-
-		<article style="display: none" id="Snounat">
+			<section style="display: none" id="gcontacte">
+					<!-- body -->
+					<div class="modal-body">
+						<p>Correu electronic: <a href="mailto:isabel@isabelgimenez.cat">isabel@isabelgimenez.cat</a></p>
+						<p>Facebook: <a href="https://www.facebook.com/isabelgimenezfotografia/">www.facebook.com/isabelgimenezfotografia</a></p>
+						<p>Tel&egrave;fon: <a href="tel:+34620293166">620293166</a></p>
+					</div>
+					<!-- body -->
+		</section>
+			<article style="display: none" id="Snounat">
 			<h2>Nounat (7 a 14 dies)</h2>
 			<section>
 				<h3>Quin és el millor moment per a fer fotos de recent nascut?</h3>
@@ -318,7 +344,7 @@
 				<p>Entrega de 30 imatges finals en alta resolució en un cd (també enviades per e-mail) i sempre amb possibilitat d’ampliar, tant en número de fotografíes com amb àlbums, quadres o impressions.</p>
 			</section>
 		</article>
-		<article style="display: none" id="Sbebe">
+			<article style="display: none" id="Sbebe">
 			<h2>Bebé (de 6 a 10 mesos)</h2>
 			<section>
 				<dl>
@@ -337,24 +363,37 @@
 						<dd>Entrega de 30 imatges finals en alta resolució en un cd (també enviades per e-mail) i sempre amb possibilitat d’ampliar, tant en número de fotografíes com amb àlbums, quadres o impressions. </dd>
 				</dl>
 			</section>
-
 		</article>
-
-
-
-	</section>
+		</div>
 	</div>
+		</div>
+	</main>
 	<!--/sessions-->
+	<footer class="footer">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4">
+					<!--p>Les imatges incloses en aquest espai s&oacute;n c&ograve;pies de les originals.</p-->
+					<p>2021 &copy; Tots els drets reservats</p>
+				</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4 text-right">
+					<p> Powered by <a href="http://www.iva.cat">Iv&agrave; Domingo</a></p>
+				</div>
+			</div>
+			</div>
+	</footer>
 
 		
-	<footer>
+	<!--footer class="footer fixed-bottom" style="margin: 5% auto">
 		<p>Les imatges incloses en aquest espai s&oacute;n c&ograve;pies de les originals.</p>
-		<p >2019 &copy; Tots els drets reservats</p>
+		<p>2019 &copy; Tots els drets reservats</p>
 		<p class="text-right"> Powered by <a href="http://www.iva.cat">Iv&agrave; Domingo</a></p>
-	</footer>	
+	</footer-->
 		<!--script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script-->
 		<script src="js/library/imagesloaded.pkgd.min.js"></script>
 		<script src="js/classie.js"></script>
 		<script src="js/AnimOnScroll.js"></script>
 </body>
+
 </html>

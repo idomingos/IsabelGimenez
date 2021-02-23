@@ -197,8 +197,6 @@ function pintarImatges (e){
             element.appendChild(image);
         //});
 
-
-
 	    grid.insertBefore(element, grid.firstChild);
   	});
 	let anim = new AnimOnScroll( document.getElementById( 'grid' ), {
@@ -235,6 +233,9 @@ function pintarImatges (e){
     	});
     	first++;
   	}
+  /*	let element = document.createElement("p");
+  	element.textContent = "Les imatges incloses en aquest espai s&oacute;n c&ograve;pies de les originals.";
+  	document.getElementById("gallery").appendChild(element);*/
 }
 
 window.onload = function(){
