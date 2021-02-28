@@ -76,26 +76,6 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	
 </head>
-<style>
-	html {
-		position: relative;
-		min-height: 100%;
-	}
-	body {
-		/* Margin bottom by footer height*/
-		margin-bottom: 60px;
-	}
-	.footer {
-		position: marker;
-		bottom: 0;
-		width: 100%;
-		/* Set the fixed height of the footer here */
-		height: 20%;
-		line-height: 15px; /* Vertically center the text there */
-		/*background-color: #f5f5f5;*/
-	}
-
-</style>
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -114,9 +94,9 @@
 						<div id="Sessions" class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
 							<button class="dropdown-item nav-link bg-light" type="button" onclick="showSession('Snounat')">Nounat</button>
 							<button class="dropdown-item nav-link bg-light" type="button" onclick="showSession('Sbebe')">Bebé</button>
-							<button class="dropdown-item nav-link bg-light" type="button">Infantil</button>
-							<button class="dropdown-item nav-link bg-light" type="button">Embar&agrave;s</button>
-							<button class="dropdown-item nav-link bg-light" type="button">Vals regal</button>
+							<button class="dropdown-item nav-link bg-light" type="button" onclick="showSession('Sinfantil')">Infantil</button>
+							<button class="dropdown-item nav-link bg-light" type="button" onclick="showSession('Sembaras')">Embar&agrave;s</button>
+							<button class="dropdown-item nav-link bg-light" type="button" onclick="showSession('Sregal')">Vals regal</button>
 						</div>
 					</li>
                     <li class="nav-item dropdown">
@@ -226,14 +206,14 @@
 					</ol>
 				<div id="pro" class="carousel-inner" role="listbox" >
 				<div class="carousel-item active">
-					<img class="d-block w-75" src="./abril1920.jpg" alt="Abril Blazquez" style="margin:auto; cursor: alias;" onclick="document.getElementById('infantil').click()">
+					<img class="d-block w-100" src="./abril1920.jpg" alt="Abril Blazquez" style="margin:auto; cursor: alias;" onclick="document.getElementById('infantil').click()">
 					<div class="carousel-caption d-none d-md-block">
 						<h5>Infantil</h5>
 						<p>Abril</p>
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img class="d-block w-75" src="./dossier/comunions/jpg/IMG_0442.jpg" alt="Comunions" style="margin:auto; cursor: alias;" onclick="document.getElementById('comunions').click()">
+					<img class="d-block w-100" src="./dossier/comunions/jpg/IMG_0442.jpg" alt="Comunions" style="margin:auto; cursor: alias;" onclick="document.getElementById('comunions').click()">
 					<div class="carousel-caption d-none d-md-block">
 						<h5>Comunions</h5>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, odit.</p>
@@ -247,7 +227,7 @@
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img class="d-block w-75" src="./dossier/bebe/jpg/IMG_8922.jpg" alt="Second slide" style="margin:auto; cursor: alias;" onclick="document.getElementById('bebe').click()">
+					<img class="d-block w-100" src="./dossier/bebe/jpg/IMG_8922.jpg" alt="Second slide" style="margin:auto; cursor: alias;" onclick="document.getElementById('bebe').click()">
 					<div class="carousel-caption d-none d-md-block">
 						<h5>Bebe</h5>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam assumenda at consequuntur delectus ea facilis ipsam officiis perspiciatis reprehenderit.</p>
@@ -277,18 +257,18 @@
 		</div>
 		</div-->
 				</div>
-	</section>
+			</section>
 			<!--Portada-->
-	
-	<!-- Gallery -->
-    <div class="col-12" id="gallery">
+			<!-- Gallery -->
+			<div class="col-12" id="gallery">
 	    <ul class="grid" id="grid">
 	    	<!--li class='grid-sizer'></li-->
 	    </ul>
+		<!--div class="row"><p>Les imatges incloses en aquest espai s&oacute;n c&ograve;pies de les originals.</p></div-->
 	</div>
-	<!-- /Gallery -->
-	<!--sessions-->
-	<div class="col-12" style="margin: auto">
+			<!-- /Gallery -->
+			<!--sessions-->
+			<div class="col-12" style="margin: auto">
 		<div class="container d-flex justify-content-center" id="gsessio">
 			<section style="display: none" id="Squi">
 			<div>
@@ -312,64 +292,132 @@
 		</section>
 			<article style="display: none" id="Snounat">
 			<h2>Nounat (7 a 14 dies)</h2>
+				<br>
 			<section>
 				<h3>Quin és el millor moment per a fer fotos de recent nascut?</h3>
 				<p>Aquest és un moment molt dolç, que passa molt ràpid i tinc l’oportunitat de fer que perduri en el temps. És molt bonic que les famílies puguin tenir aquests records per sempre. </p>
 				<p>Aquest tipus de reportatge s’ha de realizar entre els 7 i 14 dies després del naixement.</p>
 				<p>És el més recomanable ja que desrpés van perdent la flexibilitat, están més irritables i dormen menys hores.</p>
+				<br>
 			</section>
 			<section>
 				<h3>Quan s’ha de reservar?</h3>
 				<p>És important tenir la sessió reservada al menys 1 mes abans del naixement per poder organizar després la sessió.  </p>
+				<br>
 			</section>
 			<section>
 				<h3>On fem la sessió?</h3>
 				<p>Les sessions de nounat les realitzo a l’estudi on disposo de tot el necessari.</p>
+				<br>
 			</section>
 			<section>
 				<h3>Quan dura la sessió?</h3>
 				<p>Aquest tipus de sessions són llargues duren entre 3-3,5 hores., ja que tenim que fer descansos per poder alimentar i dormir al bebé. Cada sessió és diferent i anem al seu ritme.</p>
+				<br>
 			</section>
 			<section>
 				<h3>Que tinc que portar per la sessió?</h3>
 				<p>A l’estudi disposo de tot l’atrezzo necessari per fer aquest tipus de sessió, que triareu el mateix dia. Encara que si teniu un gorret, mantenta o peluix que us agrada ho podeu portar i mirem on ho podem encaixar.</p>
+				<br>
 			</section>
 			<section>
 				<h3>També surt la familia a les fotos de nounat?</h3>
 				<p>Si, sempre que vosaltres vulgueu faig fotografíes amb els pares i si hi ha germans/es grans o mascota.</p>
+				<br>
 			</section>
 			<section>
 				<h3>Què inclou la sessió?</h3>
 				<p>El temps i dedicació de la sessió, el montatge de sets&atrezzo i el postprocessat de les imatges en alta qualitat.</p>
 				<p>Entrega de 30 imatges finals en alta resolució en un cd (també enviades per e-mail) i sempre amb possibilitat d’ampliar, tant en número de fotografíes com amb àlbums, quadres o impressions.</p>
+				<br>
 			</section>
-		</article>
+			</article>
 			<article style="display: none" id="Sbebe">
 			<h2>Bebé (de 6 a 10 mesos)</h2>
+				<br>
 			<section>
-				<dl>
-					<dt>Quin és el millor moment per a fer fotos al teu bebé?</dt>
-						<dd>Entre els 6 y els 10 mesos, quan són capaços de quedar-se sentadets sense ajuda. És un moment molt bonic.  (Encara que a partir dels 4 mesos ja es pot fer, sobretot si es vol fer un seguiment del primer any).</dd>
-					<dt>On fem la sessió a l’estudi o exterior?</dt>
-						<dd>Es pot fer al lloc que més t’agradi a l’estudi on tinc tot l’atrezzo per les sessions o a l’exterior on també es pot portar una mica d’atrezzo. A la primavera i a la tardor son les millors èpoques per fer exteriors i sempre es realitzen a la tarda més o menys 1 hora abans que caigui el sol, així que dependrà de l’època de l’any l’hora de la sessió.</dd>
-					<dt>Quan dura la sessió?</dt>
-						<dd>Les sessions de bebé duren entre 1 – 1,5 hores, amb diferents canvis de roba, i escenari, tant el bebé com els pares/germans/es.</dd>
-					<dt>Que tinc que portar per la sessió?</dt>
-						<dd>A l’estudi disposo de tot l’atrezzo necessari per fer aquest tipus de sessió, i al contractar-la us enviaré una mica d’informació sobre la roba que podeu portar.</dd>
-					<dt>També surt la familia a les fotos de bebé?</dt>
-						<dd>Si, sempre que vosaltres vulgueu faig fotografíes amb els pares i si hi ha germans/es o mascota.</dd>
-					<dt>Què inclou la sessió?</dt>
-						<dd>El temps i dedicació de la sessió, el montatge de sets&atrezzo i el postprocessat de les imatges en alta qualitat.</dd>
-						<dd>Entrega de 30 imatges finals en alta resolució en un cd (també enviades per e-mail) i sempre amb possibilitat d’ampliar, tant en número de fotografíes com amb àlbums, quadres o impressions. </dd>
-				</dl>
+				<h3>Quin és el millor moment per a fer fotos al teu bebé?</h3>
+				<p>Entre els 6 y els 10 mesos, quan són capaços de quedar-se sentadets sense ajuda. És un moment molt bonic.  (Encara que a partir dels 4 mesos ja es pot fer, sobretot si es vol fer un seguiment del primer any).</p>
+				<br>
+				<h3>On fem la sessió a l’estudi o exterior?</h3>
+				<p>Es pot fer al lloc que més t’agradi a l’estudi on tinc tot l’atrezzo per les sessions o a l’exterior on també es pot portar una mica d’atrezzo. A la primavera i a la tardor son les millors èpoques per fer exteriors i sempre es realitzen a la tarda més o menys 1 hora abans que caigui el sol, així que dependrà de l’època de l’any l’hora de la sessió.</p>
+				<br>
+				<h3>Quan dura la sessió?</h3>
+				<p>Les sessions de bebé duren entre 1 – 1,5 hores, amb diferents canvis de roba, i escenari, tant el bebé com els pares/germans/es.</p>
+				<br>
+				<h3>Que tinc que portar per la sessió?</h3>
+				<p>A l’estudi disposo de tot l’atrezzo necessari per fer aquest tipus de sessió, i al contractar-la us enviaré una mica d’informació sobre la roba que podeu portar.</p>
+				<br>
+				<h3>També surt la familia a les fotos de bebé?</h3>
+				<p>Si, sempre que vosaltres vulgueu faig fotografíes amb els pares i si hi ha germans/es o mascota.</p>
+				<br>
+				<h3>Què inclou la sessió?</h3>
+				<p>El temps i dedicació de la sessió, el montatge de sets&atrezzo i el postprocessat de les imatges en alta qualitat.</p>
+				<p>Entrega de 30 imatges finals en alta resolució en un cd (també enviades per e-mail) i sempre amb possibilitat d’ampliar, tant en número de fotografíes com amb àlbums, quadres o impressions. </p>
+				<br>
 			</section>
 		</article>
+			<article style="display: none" id="Sinfantil">
+				<h2>INFANTIL (de 2 a 11 anys)</h2>
+				<br>
+				<section>
+					<h3>On fem la sessió a l’estudi o exterior?</h3>
+					<p>Es pot fer al lloc que més t’agradi a l’estudi on tinc tot l’atrezzo per les sessions o a l’exterior on també es pot portar una mica d’atrezzo. A la primavera i a la tardor son les millors èpoques per fer exteriors i sempre es realitzen a la tarda més o menys 1 hora abans que caigui el sol, així que dependrà de l’època de l’any l’hora de la sessió.</p>
+					<br>
+					<h3>Quan dura la sessió?</h3>
+					<p>Les sessions infantils duren entre 1 i 1,5 hores, amb diferents canvis de roba i escenari, tant el nen/a com els pares/germans/es.</p>
+					<br>
+					<h3>Que tinc que portar per la sessió?</h3>
+					<p>A l’estudi disposo de tot l’atrezzo necessari per fer aquest tipus de sessió, i al contractar-la us enviaré una mica d’informació sobre la roba que podeu portar.</p>
+					<br>
+					<h3>També surt la família a les fotos infantils?</h3>
+					<p>Si, sempre que vosaltres vulgueu faig fotografies amb els pares i si hi ha germans/es o mascota.</p>
+					<br>
+					<h3>Què inclou la sessió?</h3>
+					<p>El temps i dedicació de la sessió, el muntatge de sets&attrezzo i el postprocessat de les imatges en alta qualitat.</p>
+					<p>Entrega de 30 imatges finals en alta resolució en un cd (també enviades per e-mail) i sempre amb possibilitat d’ampliar, tant en nombre de fotografies com amb àlbums, quadres o impressions.</p>
+					<br>
+				</section>
+			</article>
+			<article style="display: none" id="Sembaras">
+				<h2>EMBARÀS (28 i 34 setmanes) </h2>
+				<br>
+				<section>
+					<h3>Quin és el millor moment per fer les fotos?</h3>
+					<p>El moment ideal per aquest tipus de sessió és entre les 28 i 34 setmanes, que la panxeta ja és suficientment gran com per a que llueixi bonica i encara no s’està incòmoda.</p>
+					<br>
+					<h3>On fem la sessió a l’estudi o exterior?</h3>
+					<p>Es pot fer al lloc que més t’agradi a l’estudi on tinc tot l’atrezzo per les sessions o a l’exterior on també es pot portar una mica d’atrezzo. A la primavera i a la tardor son les millors èpoques per fer exteriors i sempre es realitzen a la tarda més o menys 1 hora abans que caigui el sol, així que dependrà de l’època de l’any l’hora de la sessió.</p>
+					<br>
+					<h3>Quan dura la sessió?</h3>
+					<p>Les sessions d’embaràs tenen una durada 1,5-2 hores més o menys amb diferents canvis de roba, i escenaris.</p>
+					<br>
+					<h3>Que tinc que portar per la sessió?</h3>
+					<p>Cada embaràs i persona son diferents, així que abans de la sessió parlarem de l’enfoc que li donarem, ja que poden ser amb més o menys roba, com tu et sentis més còmoda. Hi ha vestuari i attrezzo a l’estudi, però sempre tindràs que portar roba teva per sentir-te tu mateixa.</p>
+					<p>Al contractar-la t’enviaré una mica d’informació sobre la roba que es pot portar. També es recomanable anar a la perruqueria i si és possible maquillatge professional, per a que la sessió quedi ben bonica.</p>
+					<br>
+					<h3>També surt la parella i a les fotos d’embaràs? </h3>
+					<p>Si, sempre que vosaltres vulgueu faig fotografies amb la parella i si hi ha germans/es o mascota.</p>
+					<br>
+					<h3>Què inclou la sessió?</h3>
+					<p>El temps i dedicació de la sessió, el muntatge de sets&attrezzo i el postprocessat de les imatges en alta qualitat.</p>
+					<p>Entrega de 30 imatges finals en alta resolució en un cd (també enviades per e-mail) i sempre amb possibilitat d’ampliar, tant en nombre de fotografies com amb àlbums, quadres o impressions.</p>
+					<p>Si a més contractes la sessió de Nounat, tindràs un preu especial per a les dos sessions i un regalet.</p>
+				</section>
+			</article>
+			<article style="display: none" id="Sregal">
+				<h2>VALS REGAL</h2>
+				<br>
+				<p>Si estàs pensant en fer un regal a una persona especial, una sessió fotogràfica és una molt bona opció. Contacta amb mi i et dono tota la informació.</p>
+				<p>Perquè el millor de la vida no son coses, son records!</p>
+			</article>
 		</div>
 	</div>
+		  	<!--/sessions-->
 		</div>
 	</main>
-	<!--/sessions-->
-	<footer class="footer">
+
+	<footer class="footer fixed-bottom">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4">
@@ -384,7 +432,6 @@
 			</div>
 	</footer>
 
-		
 	<!--footer class="footer fixed-bottom" style="margin: 5% auto">
 		<p>Les imatges incloses en aquest espai s&oacute;n c&ograve;pies de les originals.</p>
 		<p>2019 &copy; Tots els drets reservats</p>
