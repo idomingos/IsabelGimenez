@@ -1,3 +1,4 @@
+@charset "utf-8";
 /*
  * Copyright (C) 2019 Ivà Domingo i Solsona - https://www.iva.cat/
  *
@@ -31,8 +32,6 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-
-@charset "utf-8";
 
 @font-face {
 	font-family: "Avenir Next LT Pro";
@@ -82,8 +81,8 @@ p{
 }
 
 .jumbotron{
-	padding-top: 0px;
-    padding-bottom: 0px;
+	/*padding-top: 0px;
+    padding-bottom: 0px;*/
     background-color: #ecefea;
 	/*background-image: url('../abril1920.jpg');
 	background-size: cover;*/
@@ -92,11 +91,11 @@ p{
 
 .img-thumbnail{
 	background-color: #ecefea;
-	padding: 0.001px;
+	padding: 0.001rem;
 }
 
 .vertical-center {
-	min-height: 60%;  /* Fallback for browsers do NOT support vh unit */
+	/*min-height: 60%;   Fallback for browsers do NOT support vh unit */
 	min-height: 60vh; /* These two lines are counted as one :-)       */
 	background-color: #ecefea;
 	display: flex;
@@ -131,9 +130,8 @@ footer p,a{
 	/*font-size: 2em;*/
 	letter-spacing: 4px;
 	overflow: hidden;
-  	background: linear-gradient(90deg, #000, #fff, #000);
-  	background-repeat: no-repeat;
-  	background-size: 80%;
+	background: linear-gradient(90deg, #000, #fff, #000) no-repeat;
+	background-size: 80%;
   	-webkit-background-clip: text;
   	-webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
