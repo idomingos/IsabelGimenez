@@ -40,6 +40,12 @@
 	src: url('../font/AvenirNextLTPro-Regular.otf');
 }
 
+@font-face {
+	font-family: christmas;
+	font-display: auto;
+	src: url('../font/Christmas.ttf');
+}
+
 @font-face{
    font-family: daniel;
    font-display: auto;
@@ -98,6 +104,7 @@ p{
 	color: #928d8d;
 }
 .carousel-caption > h2{
+	font-family: christmas;
 	font-size: xxx-large;
 }
 
@@ -124,7 +131,7 @@ p{
 
 
 #site-title{
-	font-family: Avenir Next LT Pro,"daniel", sans-serif;
+	font-family: "daniel", sans-serif;
 }
 
 #site-title{
