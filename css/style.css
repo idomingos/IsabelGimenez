@@ -90,6 +90,17 @@ p{
 
 }
 
+.carousel-caption{
+	top:40%;
+	bottom: auto;
+	right: 5%;
+	text-align: right;
+	color: black;
+}
+.carousel-caption > h2{
+	font-size: xxx-large;
+}
+
 .img-thumbnail{
 	background-color: #ecefea;
 	padding: 0.001rem;
