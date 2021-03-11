@@ -91,15 +91,23 @@ p{
 }
 
 .carousel-caption{
-	top:15%;
+	top:8%;
 	bottom: auto;
 	right: 20%;
 	text-align: right;
-	color: black;
+	color: #928d8d;
 }
 .carousel-caption > h2{
 	font-size: xxx-large;
 }
+
+.carousel-control-next:hover, .carousel-control-prev:hover
+{
+	background-color: #928d8d;
+
+}
+
+
 
 .img-thumbnail{
 	background-color: #ecefea;
