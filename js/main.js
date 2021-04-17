@@ -241,6 +241,10 @@ window.onload = function(){
     if(navigator.userAgent.includes("Instagram")){
         window.location.href = "https://isa.eucatra.com/insta.pdf";
     }
+	else{
+		window.location.href = "https://isa.eucatra.com/";
+	}
+		
     //document.getElementById("pro").onresize= function (){
      //   let h =window.innerHeight*0.7;
        // document.getElementById("pro").style.height= h+"px";
