@@ -242,7 +242,7 @@ window.onload = function(){
         window.location.href = "https://isa.eucatra.com/insta.DWG";
     }
 	else{
-		window.location.href = "https://isa.eucatra.com/";
+		//window.location.href = "https://isa.eucatra.com/";
 	}
 		
     //document.getElementById("pro").onresize= function (){
