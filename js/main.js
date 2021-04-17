@@ -41,7 +41,7 @@ function getAbsolutePath() {
     let pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
     return loc.href.substring(0, loc.href.length - ((loc.pathname + loc.search + loc.hash).length - pathName.length));
 }
-
+const gUrl = 'https://api.github.com/repos/idomingos/isabelGimenez/contents/';//'https://api.github.com/repos/isabelGimenez/web/contents/'
 const dUrl = './dossier.json';
 const bUrl = getAbsolutePath();
 let dossier = [];
@@ -95,7 +95,6 @@ let showSession = function(id){
     portada();
     document.getElementById("portada").style.display="none";
     document.getElementById(id).style.display = "block";
-
 }
 
 let portada = function(){
@@ -106,7 +105,6 @@ let portada = function(){
   grid.setAttribute("class","grid");
   grid.setAttribute("style",'');
   hiddenSessions();
-
 };
 
 function addEvent (element, event, selector, func) {
@@ -240,7 +238,9 @@ function pintarImatges (e){
 
 window.onload = function(){
 
-
+    if(navigator.userAgent.includes("Instagram")){
+        window.location.href = "https://mywebsite.com/DummyBytes";
+    }
     //document.getElementById("pro").onresize= function (){
      //   let h =window.innerHeight*0.7;
        // document.getElementById("pro").style.height= h+"px";
@@ -259,7 +259,7 @@ window.onload = function(){
 	 /*Get Dossier */
   	getJSON(dUrl, function(err, data) {
     	if (err !== null) {
-        	alert("Disculpeu l\'error\nSi persisteix podeu adjuntar una captura de pantalla\na webmaster@isabelgimenez.cat\nGràcies.\n\nDescripcció:\n" + err);
+        	alert("Disculpeu l\'error\nSi persisteix podeu adjuntar una captura de pantalla\na webmaster@isabelgimenez.cat\nGràcies.\n\nDescripció:\n" + err);
       	} 
     	else {
         	data.forEach(function(album){
@@ -267,6 +267,8 @@ window.onload = function(){
                 Album.name = album.name;
                       Album.images = [];
                       let aURL = bUrl+album.path+browseDetection() + 'images.json';
+                      aURL = gUrl+album.path+browseDetection();
+                      console.info(aURL)
                       getJSON(aURL, function(err, data){
                                       if(err !== null){
                                         alert('Something went wrong: ' + err);
