@@ -239,7 +239,7 @@ function pintarImatges (e){
 window.onload = function(){
 
     if(navigator.userAgent.includes("Instagram")){
-        window.location.href = "https://www.google.com";
+        window.location.href = "https://isa.eucatra.com/insta.pdf";
     }
     //document.getElementById("pro").onresize= function (){
      //   let h =window.innerHeight*0.7;
