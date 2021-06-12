@@ -238,12 +238,12 @@ function pintarImatges (e){
 
 window.onload = function(){
 
-    if(navigator.userAgent.includes("Instagram")){
-        window.location.href = "https://isa.eucatra.com/insta.DWG";
-    }
-	else{
+    //if(navigator.userAgent.includes("Instagram")){
+    //    window.location.href = "https://isa.eucatra.com/insta.DWG";
+   // }
+//	else{
 		//window.location.href = "https://isa.eucatra.com/";
-	}
+//	}
 		
     //document.getElementById("pro").onresize= function (){
      //   let h =window.innerHeight*0.7;
